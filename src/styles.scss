@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import './styles/main.scss';
+
+body {
+  font-family: "Roboto-regular";
+}
+
+@font-face {
+  font-family: Roboto-regular;
+  src: url("/fonts/Roboto-Regular.ttf")
+}
+
+@font-face {
+  font-family: Roboto-bold;
+  src: url("/fonts/Roboto-Bold.ttf")
+}

@@ -1,0 +1,61 @@
+section {
+  background: url("/images/opening-screen/img1.png"), radial-gradient(circle, rgba(0, 26, 110, 1) 0%, rgba(7, 60, 129, 1) 50%, rgba(7, 71, 153, 1) 100%);
+  ;
+  margin: 0px;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .form-wrapper {
+    box-shadow: 0px 0px 18px #0000005f;
+    width: 800px;
+    height: 483px;
+    border-radius: 1rem;
+    inset: 0px;
+    max-width: 100vw;
+    max-height: 100dvh;
+    color: white;
+    backdrop-filter: blur(4px);
+
+    // background: linear-gradient(rgba(255, 255, 255, 0.134), rgba(255, 255, 255, 0.123)) padding-box,
+    //   linear-gradient(to right, rgba(0, 0, 139, 0.389), rgba(50, 109, 204, 0.553)) border-box;
+    // border-radius: 50em;
+    background-color: #ffffff08;
+    border: 4px solid #ff601a;
+
+    form {
+      // background-color: red;
+      // width: 70%;
+      height: 70%;
+
+      @media (max-width:768px) {
+        width: 100% !important;
+      }
+
+      input {
+        border: 0px;
+      }
+
+      input:focus {
+        outline: 0px;
+        border: 0px;
+      }
+
+      button {
+        background-color: #009990;
+        color: white;
+        border: 0px;
+      }
+    }
+
+    .blurred {
+      width: 100%;
+      position: absolute;
+      height: 100%;
+      filter: blur(5px);
+      background: #ffffff0a;
+    }
+  }
+}
