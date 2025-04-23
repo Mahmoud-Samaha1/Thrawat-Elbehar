@@ -20,6 +20,7 @@ export class WelcomeComponent implements OnInit {
   _router = inject(Router)
   ngOnInit(): void {
     setTimeout(() => {
+
       this.isVisible = false;
       this._router.navigate(['/home'])
     }, 3500);

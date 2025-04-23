@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { AmChartRaceComponent } from "../../shared-ui/components/am-chart-race/am-chart-race.component";
+import { HeaderComponent } from "../../shared-ui/components/header/header.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [HeaderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

@@ -1,0 +1,29 @@
+@import '../../../../styles/abstracts/variables';
+
+header {
+  font-family: $font-bold;
+  color: white;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px;
+
+  a {
+    color: $dark-blue-color;
+  }
+
+  .contact-btn {
+    background-color: $light-blue-color;
+    color: white;
+    border-radius: 2rem;
+  }
+
+  .social-btn {
+    color: white;
+    // border-radius: 50%;
+
+    img {
+      width: 43px;
+    }
+  }
+
+}

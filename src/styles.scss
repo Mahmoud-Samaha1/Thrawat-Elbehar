@@ -1,16 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import './styles/main.scss';
+@import './styles/abstracts/variables';
+@import "@flaticon/flaticon-uicons/css/all/all";
 
 body {
-  font-family: "Roboto-regular";
+  font-family: "ge-dinar-regular";
 }
 
 @font-face {
-  font-family: Roboto-regular;
-  src: url("/fonts/Roboto-Regular.ttf")
+  font-family: ge-dinar-regular;
+  src: url("/fonts/alfont_com_GE-Dinar-One-Regular.otf")
 }
 
 @font-face {
-  font-family: Roboto-bold;
-  src: url("/fonts/Roboto-Bold.ttf")
+  font-family: ge-dinar-bold;
+  src: url("/fonts/alfont_com_GE-Dinar-One-Bold.otf")
 }
