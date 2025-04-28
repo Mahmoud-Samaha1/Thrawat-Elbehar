@@ -7,6 +7,10 @@ header {
   z-index: 1000;
   padding: 10px;
 
+  .logo {
+    margin-bottom: -60px;
+  }
+
   a {
     color: $dark-blue-color;
   }
@@ -23,6 +27,43 @@ header {
 
     img {
       width: 43px;
+    }
+  }
+
+  ul {
+    justify-content: space-evenly;
+    position: relative;
+
+    li {
+      position: relative;
+    }
+
+    // li:not(:last-child)::after {
+    //   content: "";
+    //   position: absolute;
+    //   top: 1px;
+    //   left: 0px;
+    //   width: 1px;
+    //   background-color: $dark-blue-color;
+    //   height: 10px;
+    // }
+    li:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 15%;
+      left: -12px;
+      right: auto;
+      width: 1px;
+      background-color: $dark-blue-color;
+      height: 30px;
+
+      [dir="ltr"] &::after {
+        left: auto;
+        right: -12px;
+        background-color: red !important;
+      }
+
+      // border-inline-end: 1px solid $dark-blue-color;
     }
   }
 

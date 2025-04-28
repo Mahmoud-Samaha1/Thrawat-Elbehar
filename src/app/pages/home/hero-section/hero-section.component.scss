@@ -1,0 +1,45 @@
+@import '../../../../styles/abstracts/variables';
+
+section {
+    // background: linear-gradient(0deg, #ffffff -70%, transparent), url("/images/heroSection-Bg.png");
+    background: linear-gradient(0deg, #ffffff59 -70%, #00000005), url(/images/heroSection-Bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    border-radius: 2rem;
+    font-family: $font-bold;
+
+    .text-container {
+        padding-inline-start: 140px;
+        padding-block-start: 120px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        line-height: 1.5;
+    }
+
+    .translate-btns {
+        position: relative;
+
+        button {
+            background-color: transparent;
+            color: white;
+            border-radius: 2rem;
+        }
+
+        button.choosen-btn {
+            background-color: white;
+            color: $red-color;
+            border-radius: 2rem;
+        }
+
+        .splitter {
+            width: 1px;
+            height: 30px;
+            margin-inline-start: 11px;
+            background-color: white;
+        }
+    }
+}
