@@ -5,5 +5,9 @@
     "ar": "Arabic",
     "en": "English"
   },
-  "hello": "hello"
+  "aboutSection": {
+    "header": "About Us",
+    "text": "Tharwat Al Bahar is a leading company in the field of aquaculture and fresh seafood production, where we are committed to the highest standards of quality and environmental sustainability.",
+    "more": "More"
+  }
 }
