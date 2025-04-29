@@ -3,7 +3,7 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpLoaderFactory } from './translate-loader';
@@ -19,7 +19,7 @@ export const appConfig: ApplicationConfig = {
       useFactory: HttpLoaderFactory,
       deps: [HttpClient]
     }
-  })
+  }), CarouselModule
   ]
 
 

@@ -1,0 +1,108 @@
+@import '../../../../styles/abstracts/variables';
+
+section {
+  color: $dark-blue-color;
+  background-color: $sky-color;
+
+  h2 {
+    font-family: $font-bold;
+    font-size: 2.5rem;
+  }
+
+  .shapes {
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    right: 0px
+  }
+}
+
+
+
+
+.slider {
+  // display: none;
+
+
+  .img-wrap {
+    width: 100%;
+
+    .field {
+      -repeat: no-repeat;
+      background-position: left;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      height: 320px;
+      margin-inline: 1rem;
+      padding-top: 1rem;
+      position: relative;
+      border-radius: 13px 52px 13px 52px;
+      -webkit-border-radius: 13px 52px 13px 52px;
+      -moz-border-radius: 13px 52px 13px 52px;
+      -ms-border-radius: 13px 52px 13px 52px;
+      -o-border-radius: 13px 52px 13px 52px;
+      transition: .4s;
+      -webkit-transition: .4s;
+      -moz-transition: .4s;
+      -ms-transition: .4s;
+      -o-transition: .4s;
+      box-shadow: 0px 4px 9px 0px #00000033;
+
+      img {
+        position: absolute;
+        box-shadow: inset 0px 0px 0px 10px white;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        // animation: MoveUpDown 2s linear infinite;
+        //-webkit-animation: MoveUpDown 2s linear infinite;
+        transition: .4s;
+        -webkit-transition: .4s;
+        -moz-transition: .4s;
+        -ms-transition: .4s;
+        -o-transition: .4s;
+      }
+    }
+
+    .field-details {
+      h4 {
+        font-weight: 700;
+        margin-top: 4rem;
+        text-align: center;
+        transition: .4s;
+        -webkit-transition: .4s;
+        -moz-transition: .4s;
+        -ms-transition: .4s;
+        -o-transition: .4s;
+      }
+
+      .member-details {
+        font-weight: 500;
+        text-align: center;
+      }
+
+      .member-list {
+        display: none;
+
+        p.sub-title {
+          color: #143b1f;
+          font-weight: 600 !important;
+          margin-bottom: 0px;
+
+        }
+      }
+
+      ul {
+        list-style-type: disc;
+
+        li {
+          margin: .5rem;
+        }
+      }
+    }
+
+
+  }
+
+}
