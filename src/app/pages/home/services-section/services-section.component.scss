@@ -27,34 +27,26 @@ section {
   .img-wrap {
     width: 100%;
 
-    .field {
-      -repeat: no-repeat;
-      background-position: left;
+    .service {
       color: white;
       display: flex;
       flex-direction: column;
-      height: 320px;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
       margin-inline: 1rem;
+      margin-block: 1rem;
       padding-top: 1rem;
+      padding-inline: 1rem;
       position: relative;
-      border-radius: 13px 52px 13px 52px;
-      -webkit-border-radius: 13px 52px 13px 52px;
-      -moz-border-radius: 13px 52px 13px 52px;
-      -ms-border-radius: 13px 52px 13px 52px;
-      -o-border-radius: 13px 52px 13px 52px;
+      border-radius: 3rem;
       transition: .4s;
-      -webkit-transition: .4s;
-      -moz-transition: .4s;
-      -ms-transition: .4s;
-      -o-transition: .4s;
       box-shadow: 0px 4px 9px 0px #00000033;
+      text-align: center;
 
       img {
-        position: absolute;
-        box-shadow: inset 0px 0px 0px 10px white;
-        border-radius: 50%;
-        width: 35px;
-        height: 35px;
+        width: 46px;
+        height: 46px;
         // animation: MoveUpDown 2s linear infinite;
         //-webkit-animation: MoveUpDown 2s linear infinite;
         transition: .4s;
@@ -65,42 +57,20 @@ section {
       }
     }
 
-    .field-details {
-      h4 {
-        font-weight: 700;
-        margin-top: 4rem;
-        text-align: center;
-        transition: .4s;
-        -webkit-transition: .4s;
-        -moz-transition: .4s;
-        -ms-transition: .4s;
-        -o-transition: .4s;
-      }
 
-      .member-details {
-        font-weight: 500;
-        text-align: center;
-      }
-
-      .member-list {
-        display: none;
-
-        p.sub-title {
-          color: #143b1f;
-          font-weight: 600 !important;
-          margin-bottom: 0px;
-
-        }
-      }
-
-      ul {
-        list-style-type: disc;
-
-        li {
-          margin: .5rem;
-        }
-      }
+    h6 {
+      font-family: $font-bold;
+      color: $red-color;
+      margin-top: 1rem;
+      transition: .4s;
     }
+
+    p {
+      color: $dark-blue-color;
+      white-space: break-spaces;
+      text-align: center;
+    }
+
 
 
   }

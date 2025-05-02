@@ -16,3 +16,43 @@ body {
   font-family: ge-dinar-bold;
   src: url("/fonts/alfont_com_GE-Dinar-One-Bold.otf")
 }
+
+
+// service slider
+.slider .owl-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  pointer-events: none;
+  /* Let inner buttons handle clicks */
+}
+
+.slider .owl-nav .owl-prev,
+.slider .owl-nav .owl-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: all;
+  background-color: $light-blue-color;
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.slider .owl-nav .owl-prev:hover,
+.slider .owl-nav .owl-next:hover {
+  background-color: $dark-blue-color;
+}
+
+// parteners slider

@@ -1,16 +1,20 @@
 <section
-  class="row my-5 position-relative justify-content-center align-items-center"
+  class="row my-4 position-relative justify-content-center align-items-center"
 >
-  <h2 class="mb-4 d-flex justify-content-center align-items-center">الخدمات</h2>
+  <h2 class="my-4 d-flex justify-content-center align-items-center">الخدمات</h2>
   <div class="slider">
     <owl-carousel-o [options]="customOptions">
       <ng-container>
         <ng-template
           carouselSlide
-          *ngFor="let judge of defaultData; index as i"
+          *ngFor="let service of defaultData; index as i"
         >
           <div class="img-wrap">
-            <div class="field"></div>
+            <div class="service">
+              <img src="{{ service.image }}" alt="" />
+              <h6>{{ service.title }}</h6>
+              <p>{{ service.description }}</p>
+            </div>
           </div>
         </ng-template>
       </ng-container>
