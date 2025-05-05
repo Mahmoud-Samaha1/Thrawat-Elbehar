@@ -27,7 +27,7 @@
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^5.3.3",
     "font-awesome": "^4.7.0",
-    "ngx-owl-carousel-o": "^19.0.2",
+    "ngx-owl-carousel-o": "^18.0.1",
     "ngx-translate-messageformat-compiler": "^7.1.0",
     "rxjs": "~7.8.0",
     "sweetalert2": "^11.6.15",
