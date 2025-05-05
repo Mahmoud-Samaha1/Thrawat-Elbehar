@@ -8,14 +8,14 @@ section {
     content: "";
     background-image: url("../../../../../public/images/news.png");
     background-size: cover;
-    height: 100%;
-    width: 330px;
+    height: 450px;
+    width: 350px;
     border-radius: 30px;
     display: block;
     background-repeat: no-repeat;
     position: absolute;
     z-index: 0;
-    right: -230px;
+    right: 5%;
   }
 
   h2 {
@@ -44,12 +44,12 @@ section {
     border-radius: 20px;
     margin-block: 1rem;
     color: white;
-    font-size: 1.2rem;
-    font-family: $font-bold;
+    // font-family: $font-bold;
 
     img {
       border-radius: 20px;
-      margin: .5rem;
+      margin-block: 0.5rem;
+      height: 100px;
     }
 
     p {
