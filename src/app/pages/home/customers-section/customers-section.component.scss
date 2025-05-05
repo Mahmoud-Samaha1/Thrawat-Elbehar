@@ -2,7 +2,7 @@
 
 section {
   color: $dark-blue-color;
-  background-color: $sky-color;
+  background-color: white;
 
   h2 {
     font-family: $font-bold;
@@ -12,7 +12,7 @@ section {
   .shapes {
     position: absolute;
     z-index: 0;
-    bottom: -120px;
+    top: 0px;
     right: 0px
   }
 }
@@ -20,15 +20,12 @@ section {
 
 
 
-.slider {
-  // display: none;
-
+.customer-slider {
 
   .img-wrap {
     width: 100%;
 
-    .service {
-      background-color: $sky-color;
+    .customer {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -41,12 +38,10 @@ section {
       position: relative;
       border-radius: 3rem;
       transition: .4s;
-      box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 20%);
       text-align: center;
 
       &:hover {
         translate: 0px -10px;
-        background-color: white;
         cursor: pointer;
 
         img {
@@ -55,10 +50,6 @@ section {
       }
 
       img {
-        width: 46px;
-        height: 46px;
-        // animation: MoveUpDown 2s linear infinite;
-        //-webkit-animation: MoveUpDown 2s linear infinite;
         transition: .4s;
       }
     }
