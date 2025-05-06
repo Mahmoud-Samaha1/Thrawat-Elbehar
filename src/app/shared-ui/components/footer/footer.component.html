@@ -1,0 +1,63 @@
+<section
+  class="mt-4 rounded-top-4 d-flex flex-column justify-content-center align-items-center"
+>
+  <div class="row w-100 my-5 justify-content-evenly">
+    <div
+      class="col-3 footer-card rounded-4 py-2 d-flex justify-content-center align-items-center"
+    >
+      <img [src]="logo" alt="" class="" />
+    </div>
+    <div
+      class="col-6 footer-card middle-card py-2 d-flex flex-column justify-content-center align-items-center"
+    >
+      <p class="m-0 text-center">
+        نلتزم بأفضل معايير الإنتاج لضمان تقديم منتجات بحرية طازجة وآمنة
+      </p>
+      <div
+        class="social-icons fa-2x mt-4 d-flex justify-content-center align-items-center"
+      >
+        <div class="icon mx-1">
+          <i class="fi fi-brands-facebook"></i>
+        </div>
+
+        <div class="icon mx-1">
+          <i class="fi fi-brands-instagram"></i>
+        </div>
+
+        <div class="icon mx-1">
+          <i class="fi fi-brands-tik-tok"></i>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-3 footer-card rounded-4 py-2 d-flex justify-content-center align-items-center"
+    >
+      <form
+        class="w-75 d-flex flex-column justify-content-center align-items-center"
+        (ngSubmit)="emailFormSubmit()"
+        #sendingEmailForm="ngForm"
+      >
+        <div
+          class="emailInput-wrapper w-100 rounded-4 d-flex justify-content-center align-items-center"
+        >
+          <i class="fi fi-sr-envelope d-flex"></i>
+          <input
+            type="text"
+            class="form-control"
+            id="emailInput"
+            placeholder="أدخل البريد الألكتروني"
+            [(ngModel)]="email"
+          />
+        </div>
+
+        <div
+          class="btn participate-btn rounded-4 w-50 mt-3 d-flex justify-content-center align-items-center"
+          type="submit"
+        >
+          <i class="fi fi-ss-users-medical mx-1 d-flex"></i>
+          <p class="m-0">أشترك الآن</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
