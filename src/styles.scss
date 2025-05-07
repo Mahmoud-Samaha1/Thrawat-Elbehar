@@ -18,6 +18,18 @@ body {
 }
 
 
+.shapes {
+  @media (max-width:768px) {
+    display: none !important;
+  }
+}
+
+.left-shapes {
+  @media (max-width:768px) {
+    display: none !important;
+  }
+}
+
 // service slider
 .slider .owl-nav {
   display: flex;
@@ -64,6 +76,10 @@ body {
 
   .owl-stage-outer {
     width: 75%;
+
+    @media (max-width:1024px) {
+      width: 100% !important;
+    }
   }
 }
 
@@ -100,10 +116,18 @@ body {
 
 .customer-slider .owl-nav .owl-next {
   margin-inline-end: 10rem !important;
+
+  @media (max-width:1024px) {
+    margin-inline-end: 1rem !important;
+  }
 }
 
 .customer-slider .owl-nav .owl-prev {
   margin-inline-start: 10rem !important;
+
+  @media (max-width:1024px) {
+    margin-inline-start: 1rem !important;
+  }
 }
 
 .customer-slider .owl-nav .owl-prev:hover,

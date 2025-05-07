@@ -28,4 +28,9 @@ app-footer {
   bottom: -270px;
   width: 100%;
   z-index: -1;
+
+  @media (max-width:768px) {
+    position: relative !important;
+    bottom: 0px;
+  }
 }

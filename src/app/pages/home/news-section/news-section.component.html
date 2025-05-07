@@ -1,18 +1,18 @@
 <section
   class="my-4 d-flex flex-column position-relative justify-content-center align-items-center"
 >
-  <h2 class="my-4 w-100 d-flex justify-content-center align-items-center">
+  <h2 class="my-4 pb-4 w-100 d-flex justify-content-center align-items-center">
     الأخبار
   </h2>
   <div class="row w-100 news-wrapper">
-    <div class="col-3"></div>
-    <div class="col-9 news">
+    <div class="col-md-3"></div>
+    <div class="col-md-9 news">
       @for (news of defaultData; track $index) {
       <div
-        class="col-10 one-news d-flex justify-content-evenly align-items-center"
+        class="col-md-10 one-news d-flex flex-md-row flex-column justify-content-evenly align-items-center"
       >
-        <img src="{{ news.image }}" alt="" />
-        <p class="mb-0">{{ news.description }}</p>
+        <img src="{{ news.image }}" alt="" class="mx-2 mt-3 mt-md-1" />
+        <p class="w-75 my-3">{{ news.description }}</p>
       </div>
       }
     </div>

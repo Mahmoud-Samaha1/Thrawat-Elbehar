@@ -11,8 +11,29 @@ section {
   font-family: $font-bold;
 
   .text-container {
-    padding-inline-start: 140px;
-    padding-block-start: 120px;
+
+    @media (max-width:1024px) {
+
+      &:first-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .wrapper {
+    @media (max-width:550px) {
+      h1 {
+        font-size: 2rem;
+
+      }
+
+      p {
+        letter-spacing: 13px !important;
+      }
+    }
   }
 
   h1 {
@@ -33,6 +54,7 @@ section {
       background-color: white;
       color: $red-color;
       border-radius: 2rem;
+      width: 25%;
     }
 
     .splitter {
