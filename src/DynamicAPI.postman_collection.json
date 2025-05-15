@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "5582a6fb-d71e-4c32-a6c4-ef8f879c5646",
+		"name": "DynamicAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3562086"
+	},
+	"item": [
+		{
+			"name": "GetTables",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ihratt-001-site22.ntempurl.com/API/Tables",
+					"protocol": "http",
+					"host": [
+						"ihratt-001-site22",
+						"ntempurl",
+						"com"
+					],
+					"path": [
+						"API",
+						"Tables"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTableColumns",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ihratt-001-site22.ntempurl.com/API/TableColumns?TableName=Category",
+					"protocol": "http",
+					"host": [
+						"ihratt-001-site22",
+						"ntempurl",
+						"com"
+					],
+					"path": [
+						"API",
+						"TableColumns"
+					],
+					"query": [
+						{
+							"key": "TableName",
+							"value": "Category"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "ar",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://ihratt-001-site22.ntempurl.com/API/Category/Get",
+					"protocol": "http",
+					"host": [
+						"ihratt-001-site22",
+						"ntempurl",
+						"com"
+					],
+					"path": [
+						"API",
+						"Category",
+						"Get"
+					],
+					"query": [
+						{
+							"key": "SearchText",
+							"value": "قسم 1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "ar",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NameAr\": \"test\",\r\n        \"NameEn\": \"test 2\",\r\n        \"IsActive\": true,\r\n        \"IsDeleted\": false,\r\n        \"Created_Date\": \"10-10-2020\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ihratt-001-site22.ntempurl.com/API/Category/Post",
+					"protocol": "http",
+					"host": [
+						"ihratt-001-site22",
+						"ntempurl",
+						"com"
+					],
+					"path": [
+						"API",
+						"Category",
+						"Post"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
