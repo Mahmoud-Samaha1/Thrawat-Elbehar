@@ -1,4 +1,13 @@
 {
+  "header": {
+    "About": "عن الشركة",
+    "Services": "الخدمات",
+    "Customers": "عملاء الشركة",
+    "News": "الأخبار",
+    "Gallery": "معرض الصور",
+    "Media": "الوسائط",
+    "Contact-us": "تواصل معنا"
+  },
   "herosection": {
     "firstHeader": "من أعماق البحر الأحمر",
     "lastHeader": "إلى جميــع أنحاء العالم",
