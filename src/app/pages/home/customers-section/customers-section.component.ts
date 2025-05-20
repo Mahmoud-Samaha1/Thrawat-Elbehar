@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { environment } from '../../../../environments/environment';
+import { customerSectionModel } from '../../../models/customerSection.model';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-customers-section',
@@ -9,7 +12,14 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
   templateUrl: './customers-section.component.html',
   styleUrl: './customers-section.component.scss'
 })
-export class CustomersSectionComponent {
+export class CustomersSectionComponent implements OnInit {
+  url: string = environment.apiUrl
+  endPoint: string = "API/Clients/Get"
+  customersSectionData!: customerSectionModel[]
+  _http = inject(HttpClient)
+  getServicesSectionData() {
+    return this._http.get<customerSectionModel[]>(`${this.url}${this.endPoint}`).subscribe(res => { this.customersSectionData = res; console.log(this.customersSectionData); });
+  }
   customOptions: OwlOptions;
   defaultData = [
     {
@@ -101,5 +111,8 @@ export class CustomersSectionComponent {
         },
       },
     }
+  }
+  ngOnInit(): void {
+    this.getServicesSectionData()
   }
 }

@@ -9,11 +9,11 @@
       <ng-container>
         <ng-template
           carouselSlide
-          *ngFor="let customer of defaultData; index as i"
+          *ngFor="let customer of customersSectionData; index as i"
         >
           <div class="img-wrap">
             <div class="customer">
-              <img class="w-50" src="{{ customer.image }}" alt="" />
+              <img class="w-50" src="{{ customer.ImagePath }}" alt="" />
             </div>
           </div>
         </ng-template>

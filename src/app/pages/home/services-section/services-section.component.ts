@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { environment } from '../../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { servicesSectionModel } from '../../../models/servicesSection.model';
 
 @Component({
   selector: 'app-services-section',
@@ -9,7 +12,14 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
   templateUrl: './services-section.component.html',
   styleUrl: './services-section.component.scss'
 })
-export class ServicesSectionComponent {
+export class ServicesSectionComponent implements OnInit {
+  url: string = environment.apiUrl
+  endPoint: string = "API/Services/Get"
+  servicesSectionData!: servicesSectionModel[]
+  _http = inject(HttpClient)
+  getServicesSectionData() {
+    return this._http.get<servicesSectionModel[]>(`${this.url}${this.endPoint}`).subscribe(res => { this.servicesSectionData = res; console.log(this.servicesSectionData); });
+  }
   customOptions: OwlOptions;
   defaultData = [
     {
@@ -113,5 +123,8 @@ export class ServicesSectionComponent {
         },
       },
     }
+  }
+  ngOnInit(): void {
+    this.getServicesSectionData();
   }
 }

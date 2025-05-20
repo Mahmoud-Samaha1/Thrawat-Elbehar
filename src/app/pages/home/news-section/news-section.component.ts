@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { environment } from '../../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { newsSectionModel } from '../../../models/newsSection.model copy';
 
 @Component({
   selector: 'app-news-section',
@@ -9,7 +12,17 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
   templateUrl: './news-section.component.html',
   styleUrl: './news-section.component.scss'
 })
-export class NewsSectionComponent {
+export class NewsSectionComponent implements OnInit {
+  url: string = environment.apiUrl
+  endPoint: string = "API/News/Get"
+  newsSectionData!: newsSectionModel[]
+  _http = inject(HttpClient)
+  getServicesSectionData() {
+    return this._http.get<newsSectionModel[]>(`${this.url}${this.endPoint}`).subscribe(res => { this.newsSectionData = res; console.log(this.newsSectionData); });
+  }
+  ngOnInit(): void {
+    this.getServicesSectionData()
+  }
   customOptions: OwlOptions;
   defaultData = [
     {
@@ -84,3 +97,4 @@ export class NewsSectionComponent {
     }
   }
 }
+

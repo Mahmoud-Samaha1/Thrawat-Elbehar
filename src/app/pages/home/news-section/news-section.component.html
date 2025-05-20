@@ -7,12 +7,12 @@
   <div class="row w-100 news-wrapper">
     <div class="col-md-3"></div>
     <div class="col-md-9 news">
-      @for (news of defaultData; track $index) {
+      @for (news of newsSectionData; track $index) {
       <div
         class="col-md-10 one-news d-flex flex-md-row flex-column justify-content-evenly align-items-center"
       >
-        <img src="{{ news.image }}" alt="" class="mx-2 mt-3 mt-md-1" />
-        <p class="w-75 my-3">{{ news.description }}</p>
+        <img src="{{ news.ImagePath2 }}" alt="" class="mx-2 mt-3 mt-md-1" />
+        <p class="w-75 my-3">{{ news.Desc }}</p>
       </div>
       }
     </div>

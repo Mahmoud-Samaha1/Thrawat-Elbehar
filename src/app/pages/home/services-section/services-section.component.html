@@ -9,13 +9,13 @@
       <ng-container>
         <ng-template
           carouselSlide
-          *ngFor="let service of defaultData; index as i"
+          *ngFor="let service of servicesSectionData; index as i"
         >
           <div class="img-wrap">
             <div class="service">
-              <img src="{{ service.image }}" alt="" />
-              <h6>{{ service.title }}</h6>
-              <p>{{ service.description }}</p>
+              <img src="{{ service.IconPath }}" alt="" />
+              <h6>{{ service.Name }}</h6>
+              <p>{{ service.Desc }}</p>
             </div>
           </div>
         </ng-template>
