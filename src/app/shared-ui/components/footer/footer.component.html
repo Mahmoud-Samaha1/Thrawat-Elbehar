@@ -11,22 +11,30 @@
       class="col-md-6 footer-card middle-card py-2 d-flex flex-column justify-content-center align-items-center"
     >
       <p class="m-0 text-center">
-        نلتزم بأفضل معايير الإنتاج لضمان تقديم منتجات بحرية طازجة وآمنة
+        {{ websiteData[0].Footer }}
       </p>
       <div
         class="social-icons fa-2x mt-4 d-flex justify-content-center align-items-center"
       >
-        <div class="icon mx-1">
+        <a
+          href="{{ websiteData[0].Facebook }}"
+          class="icon mx-1"
+          target="_blank"
+        >
           <i class="fi fi-brands-facebook"></i>
-        </div>
+        </a>
 
-        <div class="icon mx-1">
+        <a
+          href="{{ websiteData[0].Instagram }}"
+          class="icon mx-1"
+          target="_blank"
+        >
           <i class="fi fi-brands-instagram"></i>
-        </div>
+        </a>
 
-        <div class="icon mx-1">
+        <a href="{{ websiteData[0].TikTok }}" class="icon mx-1" target="_blank">
           <i class="fi fi-brands-tik-tok"></i>
-        </div>
+        </a>
       </div>
     </div>
     <div

@@ -5,24 +5,29 @@
     تواصل معنا
   </h2>
   <div class="row w-100 justify-content-evenly">
-    <div
+    <a
       class="col-md-3 mx-md-0 contact-card rounded-4 py-2 d-flex justify-content-center align-items-center"
     >
       <i class="fi fi-ss-marker d-flex mx-2"></i>
       <p class="m-0">{{ websiteData[0].Address }}</p>
-    </div>
-    <div
+    </a>
+    <a
+      href="tel:{{ websiteData[0].Phone }}"
       class="col-md-3 mx-md-0 contact-card rounded-4 py-2 d-flex justify-content-center align-items-center"
     >
       <i class="fi fi-sr-phone-call d-flex mx-2"></i>
       <p class="m-0">{{ websiteData[0].Phone }}</p>
-    </div>
-    <div
+    </a>
+    <a
+      href="mailto:{{ websiteData[0].Email }}"
       class="col-md-3 mx-md-0 contact-card rounded-4 py-2 d-flex justify-content-center align-items-center"
     >
       <i class="fi fi-sr-envelope d-flex mx-2"></i>
       <p class="m-0">{{ websiteData[0].Email }}</p>
-    </div>
+    </a>
   </div>
-  <app-footer class="position-absolute"></app-footer>
+  <app-footer
+    [websiteData]="websiteData"
+    class="position-absolute"
+  ></app-footer>
 </section>

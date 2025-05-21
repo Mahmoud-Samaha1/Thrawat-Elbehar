@@ -16,11 +16,13 @@ section {
   }
 
   .contact-card {
+    color: $dark-blue-color;
     border: 1px solid $dark-blue-color;
     background-color: white;
     // margin-inline-end: 1rem;
     // font-size: 20px;
     font-family: $font-bold;
+    text-decoration: none;
   }
 }
 
