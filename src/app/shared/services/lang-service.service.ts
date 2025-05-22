@@ -1,18 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LangService {
-
+  _lang = signal<string>(localStorage.getItem('appLanguage') || 'ar');
+  lang = this._lang.asReadonly();
   constructor(private translateService: TranslateService) {
     const savedLang = localStorage.getItem('appLanguage') || 'ar';
-    translateService.setDefaultLang(savedLang);
-    translateService.use(savedLang);
+    translateService.setDefaultLang(this.lang());
+    translateService.use(this.lang());
   }
 
   switchLanguage(lang: string) {
+    this._lang.set(lang);
     this.translateService.use(lang);
     localStorage.setItem('appLanguage', lang);
   }
@@ -25,5 +27,8 @@ export class LangService {
       html.setAttribute('dir', 'ltr');
       html.setAttribute('lang', 'en');
     }
+  }
+  getCurrentLangSignal() {
+    return this.lang;
   }
 }

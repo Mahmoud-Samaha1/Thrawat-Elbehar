@@ -62,6 +62,9 @@ section {
   .social-icons {
     border-radius: 50%;
 
-    .icon {}
+    .icon {
+      text-decoration: none;
+      color: white;
+    }
   }
 }

@@ -42,30 +42,33 @@
     >
       <form
         class="w-75 d-flex flex-column justify-content-center align-items-center"
-        (ngSubmit)="emailFormSubmit()"
-        #sendingEmailForm="ngForm"
+        (ngSubmit)="emailFormSubmit(emailForm)"
+        #emailForm="ngForm"
       >
         <div
           class="emailInput-wrapper w-100 rounded-4 d-flex justify-content-center align-items-center"
         >
           <i class="fi fi-sr-envelope d-flex"></i>
           <input
-            type="text"
+            type="email"
             class="form-control"
             id="emailInput"
-            placeholder="أدخل البريد الألكتروني"
+            placeholder="{{ 'footer.placeholder' | translate }}"
             [(ngModel)]="email"
+            required
+            #emailInput="ngModel"
             [ngModelOptions]="{ standalone: true }"
           />
         </div>
 
-        <div
+        <button
+          [ngClass]="{ disabled: !emailInput.valid }"
           class="btn participate-btn rounded-4 w-50 mt-3 d-flex justify-content-center align-items-center"
           type="submit"
         >
           <i class="fi fi-ss-users-medical mx-1 d-flex"></i>
-          <p class="m-0">أشترك الآن</p>
-        </div>
+          <p class="m-0">{{ "footer.join" | translate }}</p>
+        </button>
       </form>
     </div>
   </div>

@@ -1,4 +1,4 @@
-import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
+import { APP_INITIALIZER, ApplicationConfig, importProvidersFrom, Injector, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -9,11 +9,19 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpLoaderFactory } from './translate-loader';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
-import { apiInterceptor } from './core/interceptors/api.interceptor';
+import { apiInterceptor, setInterceptorInjector } from './core/interceptors/api.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
-  provideHttpClient(withInterceptors([apiInterceptor])),
+  provideHttpClient(
+    withInterceptors([apiInterceptor])
+  ),
+  {
+    provide: APP_INITIALIZER,
+    useFactory: (injector: Injector) => () => setInterceptorInjector(injector),
+    deps: [Injector],
+    multi: true
+  },
   importProvidersFrom([BrowserAnimationsModule, TranslateModule.forRoot({
     loader: {
       provide: TranslateLoader,
