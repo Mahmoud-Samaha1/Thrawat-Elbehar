@@ -3,11 +3,12 @@ import { FooterComponent } from "../../../shared-ui/components/footer/footer.com
 import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { websiteDataModel } from '../../../models/websiteData.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-section',
   standalone: true,
-  imports: [FooterComponent],
+  imports: [FooterComponent, TranslateModule],
   templateUrl: './contact-section.component.html',
   styleUrl: './contact-section.component.scss'
 })

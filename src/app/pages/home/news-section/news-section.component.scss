@@ -39,11 +39,12 @@ section {
 
 }
 
+html[dir="ltr"] .news-wrapper::before {}
+
 .news-wrapper {
   position: relative;
 
-  &::before {
-    content: "";
+  .news-bg {
     background-image: url("../../../../../public/images/news.png");
     background-size: cover;
     height: 110%;
@@ -60,6 +61,30 @@ section {
       display: none;
     }
   }
+
+  .news-bg-ltr {
+    background-image: url("../../../../../public/images/news.png");
+    background-size: cover;
+    height: 110%;
+    width: 300px;
+    border-radius: 30px;
+    display: block;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 0;
+    right: 0px !important;
+    left: 9% !important;
+    bottom: 0%;
+
+    @media (max-width:768px) {
+      display: none;
+    }
+  }
+
+
+
+
+
 }
 
 .news {

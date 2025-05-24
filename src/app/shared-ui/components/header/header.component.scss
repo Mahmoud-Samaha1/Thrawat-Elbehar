@@ -36,26 +36,8 @@ header {
       position: relative;
     }
 
-
-    li:not(:last-child)::after {
-      content: "";
-      position: absolute;
-      top: 15%;
-      left: -12px;
-      right: auto;
-      width: 1px;
-      background-color: $dark-blue-color;
-      height: 30px;
-
-      [dir="ltr"] &::after {
-        left: auto;
-        right: -12px;
-        background-color: red !important;
-      }
-
-      @media (max-width:1200px) {
-        display: none;
-      }
+    li:not(:last-child) {
+      border-inline-end: 1px solid $dark-blue-color;
     }
   }
 

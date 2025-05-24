@@ -4,19 +4,26 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { servicesSectionModel } from '../../../models/servicesSection.model';
+import { Subject, takeUntil } from 'rxjs';
+import { LangService } from '../../../shared/services/lang-service.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-services-section',
   standalone: true,
-  imports: [CommonModule, CarouselModule],
+  imports: [CommonModule, CarouselModule, TranslateModule],
   templateUrl: './services-section.component.html',
   styleUrl: './services-section.component.scss'
 })
 export class ServicesSectionComponent implements OnInit {
+  private destroy$ = new Subject<void>();
+
   url: string = environment.apiUrl
   endPoint: string = "API/Services/Get"
   servicesSectionData!: servicesSectionModel[]
   _http = inject(HttpClient)
+  _langService = inject(LangService)
+
   getServicesSectionData() {
     return this._http.get<servicesSectionModel[]>(`${this.url}${this.endPoint}`).subscribe(res => { this.servicesSectionData = res; console.log(this.servicesSectionData); });
   }
@@ -125,6 +132,11 @@ export class ServicesSectionComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+    this._langService.langChanged$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => {
+        this.getServicesSectionData();
+      });
     this.getServicesSectionData();
   }
 }

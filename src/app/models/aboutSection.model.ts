@@ -1,5 +1,4 @@
 export interface aboutSectionModel {
-
   "About": string,
   "Vision": string,
   "Mission": string,

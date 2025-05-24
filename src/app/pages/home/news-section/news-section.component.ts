@@ -4,24 +4,35 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { newsSectionModel } from '../../../models/newsSection.model copy';
+import { Subject, takeUntil } from 'rxjs';
+import { LangService } from '../../../shared/services/lang-service.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-news-section',
   standalone: true,
-  imports: [CommonModule, CarouselModule],
+  imports: [CommonModule, CarouselModule, TranslateModule],
   templateUrl: './news-section.component.html',
   styleUrl: './news-section.component.scss'
 })
 export class NewsSectionComponent implements OnInit {
+  private destroy$ = new Subject<void>();
+  _langService = inject(LangService)
+
   url: string = environment.apiUrl
   endPoint: string = "API/News/Get"
   newsSectionData!: newsSectionModel[]
   _http = inject(HttpClient)
-  getServicesSectionData() {
+  getNewsSectionData() {
     return this._http.get<newsSectionModel[]>(`${this.url}${this.endPoint}`).subscribe(res => { this.newsSectionData = res; console.log(this.newsSectionData); });
   }
   ngOnInit(): void {
-    this.getServicesSectionData()
+    this._langService.langChanged$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => {
+        this.getNewsSectionData();
+      });
+    this.getNewsSectionData()
   }
   customOptions: OwlOptions;
   defaultData = [

@@ -9,19 +9,14 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpLoaderFactory } from './translate-loader';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
-import { apiInterceptor, setInterceptorInjector } from './core/interceptors/api.interceptor';
+import { apiInterceptor } from './core/interceptors/api.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
   provideHttpClient(
     withInterceptors([apiInterceptor])
   ),
-  {
-    provide: APP_INITIALIZER,
-    useFactory: (injector: Injector) => () => setInterceptorInjector(injector),
-    deps: [Injector],
-    multi: true
-  },
+
   importProvidersFrom([BrowserAnimationsModule, TranslateModule.forRoot({
     loader: {
       provide: TranslateLoader,
@@ -30,8 +25,6 @@ export const appConfig: ApplicationConfig = {
     }
   }), CarouselModule
   ]
-
-
   ),
   provideRouter(routes)]
 };

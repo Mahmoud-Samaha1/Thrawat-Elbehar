@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LangService } from '../../../shared/services/lang-service.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -10,17 +10,20 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './hero-section.component.html',
   styleUrl: './hero-section.component.scss'
 })
-export class HeroSectionComponent {
-  langService = inject(LangService)
-  currentLang: string = localStorage.getItem("appLanguage") || "ar"
-  searchValue!: string
+export class HeroSectionComponent implements OnInit {
+  _langService = inject(LangService)
+  currentLang: string | null = localStorage.getItem("appLanguage");
+
+  constructor() {
+
+  }
+  ngOnInit(): void {
+    this._langService.updateDirection(localStorage.getItem("appLanguage"))
+  }
+
   changeLang(language: string) {
-    this.langService.switchLanguage(language)
-    this.updateDirection(language)
+    this._langService.switchLanguage(language)
     this.currentLang = language
   }
-  updateDirection(lang: string) {
-    this.langService.updateDirection(lang)
-  }
-  onSearchFormSubmit() { }
+
 }

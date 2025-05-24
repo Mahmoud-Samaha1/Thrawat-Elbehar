@@ -2,8 +2,9 @@
   class="mt-4 d-flex flex-column position-relative justify-content-center align-items-center"
 >
   <h2 class="my-4 w-100 d-flex justify-content-center align-items-center">
-    تواصل معنا
+    {{ "contact-us" | translate }}
   </h2>
+  @if (websiteData && websiteData.length ) {
   <div class="row w-100 justify-content-evenly">
     <a
       class="col-md-3 mx-md-0 contact-card rounded-4 py-2 d-flex justify-content-center align-items-center"
@@ -26,6 +27,8 @@
       <p class="m-0">{{ websiteData[0].Email }}</p>
     </a>
   </div>
+  }
+
   <app-footer
     [websiteData]="websiteData"
     class="position-absolute"
