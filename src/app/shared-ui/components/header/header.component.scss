@@ -34,10 +34,11 @@ header {
 
     li {
       position: relative;
+      cursor: pointer;
     }
 
     li:not(:last-child) {
-      border-inline-end: 1px solid $dark-blue-color;
+      border-inline-end: 2px solid $dark-blue-color;
     }
   }
 
