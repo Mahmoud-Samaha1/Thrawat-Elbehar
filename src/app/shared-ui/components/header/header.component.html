@@ -1,7 +1,7 @@
 <header class="">
   <nav class="navbar navbar-expand-xl">
     <div class="container-fluid">
-      <div class="logo col-md-2">
+      <div class="logo col-md-2" routerLink="/home">
         <img src="/images/header-logo.png" alt="" class="w-75" />
       </div>
       <button
@@ -22,7 +22,10 @@
           <li class="nav-item text-center text-lg-end" routerLink="/home">
             <a class="nav-link">{{ "header.home" | translate }}</a>
           </li>
-          <li class="nav-item text-center text-lg-end">
+          <li
+            class="nav-item text-center text-lg-end"
+            [routerLink]="['/about']"
+          >
             <a class="nav-link">{{ "header.About" | translate }}</a>
           </li>
           <li class="nav-item text-center text-lg-end">

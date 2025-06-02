@@ -3,9 +3,8 @@
 @import './styles/abstracts/variables';
 @import "@flaticon/flaticon-uicons/css/all/all";
 
-body {
-  font-family: "ge-dinar-regular";
-}
+
+
 
 @font-face {
   font-family: ge-dinar-regular;
@@ -16,6 +15,61 @@ body {
   font-family: ge-dinar-bold;
   src: url("/fonts/alfont_com_GE-Dinar-One-Bold.otf")
 }
+
+@font-face {
+  font-family: nunito-regular;
+  src: url("/fonts/Nunito-Regular.ttf")
+}
+
+@font-face {
+  font-family: nunito-bold;
+  src: url("/fonts/Nunito-Bold.ttf")
+}
+
+html {
+  font-family: "ge-dinar-regular" !important;
+}
+
+html[dir=ltr] {
+  font-family: "nunito-regular" !important;
+
+  body {
+    font-family: "nunito-regular" !important;
+  }
+
+  h1,
+  h2,
+  h6,
+  button,
+  header {
+    font-family: $font-bold-en !important;
+
+    li:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      height: 30px;
+      width: 2px;
+      background-color: $dark-blue-color;
+      top: 5px;
+      right: -10px !important;
+      left: auto !important;
+    }
+
+    a {
+      font-family: $font-bold-en !important;
+    }
+  }
+
+
+
+
+
+}
+
+body {
+  font-family: "ge-dinar-regular";
+}
+
 
 
 .shapes {

@@ -1,14 +1,22 @@
 @import '../../../../styles/abstracts/variables';
 
+
+
 header {
   font-family: $font-bold;
   color: white;
   width: 100%;
   z-index: 1000;
   padding: 10px;
+  position: relative;
+
 
   .logo {
     margin-bottom: -60px;
+
+    img {
+      cursor: pointer;
+    }
   }
 
   a {
@@ -37,8 +45,17 @@ header {
       cursor: pointer;
     }
 
-    li:not(:last-child) {
-      border-inline-end: 2px solid $dark-blue-color;
+    // li:not(:last-child) {
+    //   border-inline-end: 2px solid $dark-blue-color;
+    // }
+    li:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      height: 30px;
+      width: 2px;
+      background-color: $dark-blue-color;
+      top: 5px;
+      left: -5px;
     }
   }
 
