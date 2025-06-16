@@ -2,10 +2,20 @@
   class="text-white d-flex flex-column justify-content-center align-items-center"
 >
   <div class="col-12 text-container">
-    <div class="wrapper">
-      <div class="col-12 mb-4">
+    <div
+      class="wrapper d-flex flex-column justify-content-center align-items-center"
+    >
+      <div class="col-12 mb-4 d-flex justify-content-center align-items-center">
         <h1>نبذة عن الشركة</h1>
       </div>
+      @if(heroSectionData().length){
+      <div
+        class="section-body col-12 mb-4 w-50 d-flex justify-content-center align-items-center"
+      >
+        <img src="/images/about/whale.png" alt="whale" class="mx-2" />
+        <p class="w-75 m-0">{{ heroSectionData()[0].About }}</p>
+      </div>
+      }
     </div>
   </div>
 </section>

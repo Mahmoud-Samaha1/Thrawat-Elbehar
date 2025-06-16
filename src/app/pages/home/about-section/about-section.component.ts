@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { FormsModule } from '@angular/forms';
+import { AboutService } from '../../about/about.service';
 
 @Component({
   selector: 'app-about-section',
@@ -24,15 +25,15 @@ export class AboutSectionComponent implements OnInit, OnDestroy {
   aboutSectionData: aboutSectionModel[] = []
   _http = inject(HttpClient)
   _apiService = inject(ApiService)
+  _aboutService = inject(AboutService)
   _langService = inject(LangService)
   // ____________________________________
   getAboutSectionData() {
-    return this._http.get<any>(`${this.url}${this.endPoint}`).subscribe(res => {
+    return this._aboutService.getAboutData().subscribe(res => {
       this.aboutSectionData = res;
       console.log(this.aboutSectionData);
 
-    },
-    );
+    })
   }
   ngOnInit(): void {
     this._langService.langChanged$
