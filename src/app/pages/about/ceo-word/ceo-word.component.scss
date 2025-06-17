@@ -1,0 +1,46 @@
+@import '../../../../styles/abstracts/variables';
+
+section {
+  margin-bottom: 4rem;
+  color: $dark-blue-color;
+  position: relative;
+
+  .wrapper {
+
+    &::after {}
+  }
+
+  h3 {
+    margin-inline-start: 1rem;
+  }
+
+  .word {
+    position: relative;
+    margin-inline-start: 2rem;
+
+    &::before {
+      content: url('/images/about/start-qoutation.png');
+      width: 140px;
+      height: 140px;
+      top: -10px;
+      position: absolute;
+      right: -120px;
+    }
+
+    &::after {
+      content: url('/images/about/end-qoutation.png');
+      width: 140px;
+      height: 140px;
+      bottom: 10px;
+      position: absolute;
+      left: -30px;
+    }
+  }
+
+  .shapes {
+    position: absolute;
+    z-index: 0;
+    bottom: 0px;
+    right: 370px;
+  }
+}

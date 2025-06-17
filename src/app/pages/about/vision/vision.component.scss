@@ -1,0 +1,21 @@
+@import '../../../../styles/abstracts/variables';
+
+section {
+  margin-top: -180px;
+  margin-bottom: 5rem;
+  color: $dark-blue-color;
+  position: relative;
+
+  .wrapper {
+    background-color: white;
+
+    &::after {}
+  }
+
+  .shapes {
+    position: absolute;
+    z-index: 0;
+    bottom: 0px;
+    right: 370px;
+  }
+}

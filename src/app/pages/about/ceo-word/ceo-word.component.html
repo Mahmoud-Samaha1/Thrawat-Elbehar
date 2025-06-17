@@ -1,0 +1,22 @@
+<section class="d-flex justify-content-center align-items-center w-100">
+  <div class="wrapper d-flex w-75">
+    <div class="col-4">
+      <img src="/images/about/manager-img.png" alt="" class="w-100" />
+    </div>
+    @if(ceoWordSectionData().length){
+    <div
+      class="col-8 word d-flex flex-column justify-content-center align-items-center"
+    >
+      <div class="row mb-2">
+        <h3 class="col-12">كلمة رئيس مجلس الإدارة</h3>
+        <p class="col-11 text-black">
+          {{ ceoWordSectionData()[0].CEO_Speach }}
+        </p>
+        <small class="text-center"
+          >معًا، نُرسي أسس مستقبلٍ بحري مستدام ومزدهر</small
+        >
+      </div>
+    </div>
+    }
+  </div>
+</section>

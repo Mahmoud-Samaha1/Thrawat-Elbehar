@@ -1,11 +1,17 @@
 @import '../../../styles/abstracts/variables';
 
+:host {
+  display: block;
+  background-color: $sky-color;
+
+}
+
 section {
-  background: linear-gradient(0deg, rgb(1, 30, 46), rgb(255 255 255 / 10%), rgba(0, 0, 0, 0.5)),
-    url(/images/about/bg.png);
+  background-image: url(/images/about/bg.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
+  // background-size: cover;
+
   width: 100%;
   font-family: $font-bold;
+
 }

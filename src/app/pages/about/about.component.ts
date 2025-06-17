@@ -4,13 +4,17 @@ import { HeaderComponent } from "../../shared-ui/components/header/header.compon
 import { VisionComponent } from "./vision/vision.component";
 import { AboutService } from './about.service';
 import { aboutSectionModel } from '../../models/aboutSection.model';
+import { ValuesComponent } from "./values/values.component";
+import { CeoWordComponent } from "./ceo-word/ceo-word.component";
+import { MembersComponent } from "./members/members.component";
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [AboutHeroSectionComponent, HeaderComponent, VisionComponent],
+  imports: [AboutHeroSectionComponent, HeaderComponent, VisionComponent, ValuesComponent, CeoWordComponent, MembersComponent],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  styleUrl: './about.component.scss',
+
 })
 export class AboutComponent {
   constructor() {
@@ -25,7 +29,6 @@ export class AboutComponent {
   getAboutSectionData() {
     return this._aboutService.getAboutData().subscribe(res => {
       this.aboutSectionData = res;
-      console.log(res);
       console.log(this.aboutSectionData);
 
     })

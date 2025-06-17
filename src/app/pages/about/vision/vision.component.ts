@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { aboutSectionModel } from '../../../models/aboutSection.model';
 
 @Component({
   selector: 'app-vision',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './vision.component.scss'
 })
 export class VisionComponent {
+  visionSectionData = input<aboutSectionModel[]>([])
 
 }
