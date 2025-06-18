@@ -16,4 +16,7 @@ export class AboutService {
   getAboutData() {
     return this._http.get<any>(`${this.url}${this.endPoint}`)
   }
+  getWebsiteData() {
+
+  }
 }

@@ -7,11 +7,13 @@ import { aboutSectionModel } from '../../models/aboutSection.model';
 import { ValuesComponent } from "./values/values.component";
 import { CeoWordComponent } from "./ceo-word/ceo-word.component";
 import { MembersComponent } from "./members/members.component";
+import { FooterComponent } from "../../shared-ui/components/footer/footer.component";
+import { ContactSectionComponent } from "../home/contact-section/contact-section.component";
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [AboutHeroSectionComponent, HeaderComponent, VisionComponent, ValuesComponent, CeoWordComponent, MembersComponent],
+  imports: [AboutHeroSectionComponent, HeaderComponent, VisionComponent, ValuesComponent, CeoWordComponent, MembersComponent, FooterComponent, ContactSectionComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
 
