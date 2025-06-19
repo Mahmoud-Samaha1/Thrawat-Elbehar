@@ -31,7 +31,6 @@ export class AboutSectionComponent implements OnInit, OnDestroy {
   getAboutSectionData() {
     return this._aboutService.getAboutData().subscribe(res => {
       this.aboutSectionData = res;
-      console.log(this.aboutSectionData);
 
     })
   }

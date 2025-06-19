@@ -7,6 +7,8 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 import { SweetalertService } from '../../../shared/services/sweetalert.service';
 import { HomePageService } from '../../../pages/home/home-page.service';
+import { Subject, takeUntil } from 'rxjs';
+import { LangService } from '../../../shared/services/lang-service.service';
 
 @Component({
   selector: 'app-footer',
@@ -16,6 +18,8 @@ import { HomePageService } from '../../../pages/home/home-page.service';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent implements OnInit {
+  private destroy$ = new Subject<void>();
+  _langService = inject(LangService)
   logo: string = "/images/white-logo.png";
   email!: string;
   _http = inject(HttpClient)
@@ -53,6 +57,11 @@ export class FooterComponent implements OnInit {
   constructor() {
   }
   ngOnInit(): void {
+    this._langService.langChanged$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => {
+        this.getfooterData();
+      });
     this.getfooterData()
   }
   getfooterData() {
