@@ -1,48 +1,19 @@
 <section class="row">
   <div class="wrapper row col-12">
     <div class="col-9 members row">
+      @for(member of membersSectionData() ; track $index){
       <div class="member col-4">
-        <img src="/images/about/member.png" class="card-img-top" alt="..." />
+        <img
+          src="{{ membersSectionData()[0].ImagePath }}"
+          class="card-img-top"
+          alt="..."
+        />
         <div class="card-body flex-column justify-content-end">
-          <p class="card-text">الأسم: محمود سماحه</p>
-          <p class="card-text">الوظيفة: عضو مجلس إدارة</p>
+          <p class="card-text">الأسم : {{ membersSectionData()[0].Name }}</p>
+          <p class="card-text">الوظيفة : {{ membersSectionData()[0].Job }}</p>
         </div>
       </div>
-      <div class="member col-4">
-        <img src="/images/about/member.png" class="card-img-top" alt="..." />
-        <div class="card-body flex-column justify-content-end">
-          <p class="card-text">الأسم: محمود سماحه</p>
-          <p class="card-text">الوظيفة: عضو مجلس إدارة</p>
-        </div>
-      </div>
-      <div class="member col-4">
-        <img src="/images/about/member.png" class="card-img-top" alt="..." />
-        <div class="card-body flex-column justify-content-end">
-          <p class="card-text">الأسم: محمود سماحه</p>
-          <p class="card-text">الوظيفة: عضو مجلس إدارة</p>
-        </div>
-      </div>
-      <div class="member col-4">
-        <img src="/images/about/member.png" class="card-img-top" alt="..." />
-        <div class="card-body flex-column justify-content-end">
-          <p class="card-text">الأسم: محمود سماحه</p>
-          <p class="card-text">الوظيفة: عضو مجلس إدارة</p>
-        </div>
-      </div>
-      <div class="member col-4">
-        <img src="/images/about/member.png" class="card-img-top" alt="..." />
-        <div class="card-body flex-column justify-content-end">
-          <p class="card-text">الأسم: محمود سماحه</p>
-          <p class="card-text">الوظيفة: عضو مجلس إدارة</p>
-        </div>
-      </div>
-      <div class="member col-4">
-        <img src="/images/about/member.png" class="card-img-top" alt="..." />
-        <div class="card-body flex-column justify-content-end">
-          <p class="card-text">الأسم: محمود سماحه</p>
-          <p class="card-text">الوظيفة: عضو مجلس إدارة</p>
-        </div>
-      </div>
+      }
     </div>
     <div
       class="col-3 members-title row flex-column justify-content-center align-items-center"

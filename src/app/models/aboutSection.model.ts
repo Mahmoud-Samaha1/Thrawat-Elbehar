@@ -7,3 +7,9 @@ export interface aboutSectionModel {
 
 
 }
+export interface teamsDataModel {
+  "Sort": number,
+  "Name": string,
+  "Job": string,
+  "ImagePath": string
+}

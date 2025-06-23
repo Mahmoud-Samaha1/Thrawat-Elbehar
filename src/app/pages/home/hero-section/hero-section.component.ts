@@ -24,6 +24,12 @@ export class HeroSectionComponent implements OnInit {
   changeLang(language: string) {
     this._langService.switchLanguage(language)
     this.currentLang = language
+    let newsBgLtr = document.querySelector('.news-bg') as HTMLElement;
+    if (language == 'ar') {
+      newsBgLtr.classList.remove("news-bg-ltr")
+    } else {
+      newsBgLtr.classList.add("news-bg-ltr")
+    }
   }
 
 }

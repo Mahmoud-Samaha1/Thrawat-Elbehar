@@ -23,16 +23,16 @@ export class LangService {
   }
   updateDirection(lang: string | null) {
     const html = document.querySelector('html') as HTMLElement;
-    let newsBgLtr = document.querySelector('.news-bg') as HTMLElement;
+    // let newsBgLtr = document.querySelector('.news-bg') as HTMLElement;
     if (lang == 'ar') {
       html.setAttribute('dir', 'rtl');
       html.setAttribute('lang', 'ar');
-      newsBgLtr.classList.remove("news-bg-ltr")
+      // newsBgLtr.classList.remove("news-bg-ltr")
 
     } else {
       html.setAttribute('dir', 'ltr');
       html.setAttribute('lang', 'en');
-      newsBgLtr.classList.add("news-bg-ltr")
+      // newsBgLtr.classList.add("news-bg-ltr")
     }
   }
 }

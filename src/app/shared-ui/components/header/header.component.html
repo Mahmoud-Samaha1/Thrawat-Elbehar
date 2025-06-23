@@ -48,26 +48,41 @@
           {{ "header.Contact-us" | translate }}
         </button>
         <div
-          class="col-lg-2 mt-3 mt-xl-0 d-flex justify-content-evenly align-items-center"
+          class="col-lg-2 social-wrapper row mt-3 mt-xl-0 align-items-center"
         >
           <button
+            (click)="changeLang()"
             type="button"
-            class="btn social-btn d-flex justify-content-center align-items-center p-0"
+            class="btn social-btn col-3 d-flex justify-content-center align-items-center p-0"
           >
-            <img src="images/facebook.png" alt="" class="" />
+            <img src="images/translate-icon.png" alt="" class="w-100" />
           </button>
-          <button
+          @if(headerData){
+          <a
             type="button"
-            class="btn social-btn d-flex justify-content-center align-items-center p-0"
+            target="_blank"
+            href="{{ headerData[0].Facebook }}"
+            class="btn social-btn col-3 d-flex justify-content-center align-items-center p-0"
           >
-            <img src="images/instagram.png" alt="" class="" />
-          </button>
-          <button
+            <img src="images/facebook.png" alt="" class="w-100" />
+          </a>
+          <a
             type="button"
-            class="btn social-btn d-flex justify-content-center align-items-center p-0"
+            target="_blank"
+            href="{{ headerData[0].Instagram }}"
+            class="btn social-btn col-3 d-flex justify-content-center align-items-center p-0"
           >
-            <img src="images/tiktok.png" alt="" class="" />
-          </button>
+            <img src="images/instagram.png" alt="" class="w-100" />
+          </a>
+          <a
+            type="button"
+            target="_blank"
+            href="{{ headerData[0].TikTok }}"
+            class="btn social-btn col-3 d-flex justify-content-center align-items-center p-0"
+          >
+            <img src="images/tiktok.png" alt="" class="w-100" />
+          </a>
+          }
         </div>
       </div>
     </div>

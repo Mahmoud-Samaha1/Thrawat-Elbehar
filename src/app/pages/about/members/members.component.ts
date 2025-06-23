@@ -1,5 +1,5 @@
-import { Component, input } from '@angular/core';
-import { aboutSectionModel } from '../../../models/aboutSection.model';
+import { Component, input, OnInit } from '@angular/core';
+import { aboutSectionModel, teamsDataModel } from '../../../models/aboutSection.model';
 
 @Component({
   selector: 'app-members',
@@ -9,5 +9,7 @@ import { aboutSectionModel } from '../../../models/aboutSection.model';
   styleUrl: './members.component.scss'
 })
 export class MembersComponent {
-  membersSectionData = input<aboutSectionModel[]>([])
+
+  membersSectionData = input<teamsDataModel[]>([])
+
 }

@@ -24,7 +24,7 @@ section {
       height: 140px;
       top: -10px;
       position: absolute;
-      right: -120px;
+      inset-inline-start: -123px;
     }
 
     &::after {
@@ -33,7 +33,7 @@ section {
       height: 140px;
       bottom: 10px;
       position: absolute;
-      left: -30px;
+      inset-inline-end: -30px;
     }
   }
 

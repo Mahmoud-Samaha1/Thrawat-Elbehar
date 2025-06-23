@@ -29,5 +29,18 @@
   "footer": {
     "join": "Join Now",
     "placeholder": "Write Your E-Mail"
+  },
+  "about-page": {
+    "about-company": "About The Company",
+    "Vision": "Vision",
+    "Mision": "Mision",
+    "Values": "Values",
+    "admin-word": "CEO's Speech",
+    "small": "Together, we lay the foundations for a sustainable and prosperous maritime future.",
+    "members": {
+      "title": "Board Members",
+      "name": "Name",
+      "job": "Job"
+    }
   }
 }

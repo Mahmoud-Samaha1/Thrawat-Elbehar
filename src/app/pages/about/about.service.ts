@@ -10,11 +10,15 @@ export class AboutService {
   _http = inject(HttpClient)
   url: string = environment.apiUrl
   endPoint: string = "API/AboutUs/Get"
+  teamsEndPoint: string = "API/Teams/Get"
   constructor() {
 
   }
   getAboutData() {
     return this._http.get<any>(`${this.url}${this.endPoint}`)
+  }
+  getTeamsData() {
+    return this._http.get<any>(`${this.url}${this.teamsEndPoint}`)
   }
   getWebsiteData() {
 
