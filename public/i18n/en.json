@@ -42,5 +42,8 @@
       "name": "Name",
       "job": "Job"
     }
+  },
+  "services": {
+    "title": "Services"
   }
 }

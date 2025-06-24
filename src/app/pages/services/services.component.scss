@@ -1,0 +1,15 @@
+@import '../../../styles/abstracts/variables';
+
+section {
+  background-image: url(/images/services/services-bg.png);
+  background-repeat: no-repeat;
+  // background-size: cover;
+  width: 100%;
+  font-family: $font-bold;
+
+  .service-title {
+    img {
+      width: 130px;
+    }
+  }
+}
