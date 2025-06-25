@@ -3,13 +3,75 @@
 section {
   background-image: url(/images/services/services-bg.png);
   background-repeat: no-repeat;
-  // background-size: cover;
+  background-size: cover;
   width: 100%;
   font-family: $font-bold;
+  color: $dark-blue-color;
 
   .service-title {
+    height: 600px;
+
     img {
       width: 130px;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    h5 {
+      font-family: $font-regular-en;
+      letter-spacing: 15px;
+      color: white;
+      background-color: $light-blue-color;
+    }
+
+  }
+
+  .service {
+    background-color: $sky-color;
+
+    height: 300px;
+    margin-inline: 1rem;
+    margin-block: 1rem;
+    padding-top: 1rem;
+    padding-inline: 1rem;
+    position: relative;
+    border-radius: 3rem;
+    transition: .4s;
+    box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 20%);
+    text-align: center;
+
+    &:hover {
+      translate: 0px -10px;
+      background-color: white;
+      cursor: pointer;
+
+      img {
+        animation: MoveUpDown 1.5s linear infinite;
+      }
+    }
+
+    img {
+
+
+      // animation: MoveUpDown 2s linear infinite;
+      //-webkit-animation: MoveUpDown 2s linear infinite;
+      transition: .4s;
+    }
+
+    h6 {
+      font-family: $font-bold;
+      color: $red-color;
+      margin-top: 1rem;
+      transition: .4s;
+    }
+
+    p {
+      color: $dark-blue-color;
+      white-space: break-spaces;
+      text-align: center;
     }
   }
 }

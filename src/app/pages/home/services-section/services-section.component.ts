@@ -25,7 +25,7 @@ export class ServicesSectionComponent implements OnInit {
   _langService = inject(LangService)
 
   getServicesSectionData() {
-    return this._http.get<servicesSectionModel[]>(`${this.url}${this.endPoint}`).subscribe(res => { this.servicesSectionData = res; console.log(this.servicesSectionData); });
+    return this._http.get<servicesSectionModel[]>(`${this.url}${this.endPoint}`).subscribe(res => { this.servicesSectionData = res; });
   }
   customOptions: OwlOptions;
   defaultData = [
