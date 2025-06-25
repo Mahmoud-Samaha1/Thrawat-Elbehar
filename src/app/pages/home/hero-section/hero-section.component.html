@@ -14,7 +14,7 @@
           type="button"
           class="btn py-1 px-2 col-2"
           (click)="changeLang('ar')"
-          [ngClass]="{ 'choosen-btn': currentLang == 'ar' }"
+          [ngClass]="{ 'choosen-btn': currentLang.value == 'ar' }"
         >
           {{ "herosection.ar" | translate }}
         </button>
@@ -23,7 +23,7 @@
           type="button"
           class="btn py-1 px-2 col-2 mx-2"
           (click)="changeLang('en')"
-          [ngClass]="{ 'choosen-btn': currentLang == 'en' }"
+          [ngClass]="{ 'choosen-btn': currentLang.value == 'en' }"
         >
           {{ "herosection.en" | translate }}
         </button>

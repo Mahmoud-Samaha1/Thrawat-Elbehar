@@ -32,7 +32,7 @@ export class NewsSectionComponent implements OnInit {
       .subscribe(() => {
         this.getNewsSectionData();
       });
-    this.getNewsSectionData()
+    // this.getNewsSectionData()
   }
   customOptions: OwlOptions;
   defaultData = [

@@ -1,0 +1,33 @@
+<app-header class="position-relative"></app-header>
+<section class="container-fluid py-3">
+  <div
+    class="service-title col-12 row flex-column justify-content-center align-content-center align-items-center"
+  >
+    <img
+      src="{{ servicesDetailsData[0].IconPath }}"
+      alt=""
+      class="col-12 icon-image"
+    />
+    <h2 class="col-12 text-center w-50 py-2">
+      {{ servicesDetailsData[0].Name }}
+    </h2>
+    <p class="fs-4 col-6 text-center text-white mt-3">
+      {{ servicesDetailsData[0].Desc }}
+    </p>
+    <div
+      class="col-8 row service-image justify-content-center align-content-center"
+    >
+      <img
+        src="{{ servicesDetailsData[0].ImagePath1 }}"
+        alt=""
+        class="col-5 mx-1 rounded-5"
+      />
+      <img
+        src="{{ servicesDetailsData[0].ImagePath2 }}"
+        alt=""
+        class="col-5 mx-1 rounded-5"
+      />
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

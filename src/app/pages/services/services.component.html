@@ -13,24 +13,22 @@
   </div>
   <div class="services col-12 row justify-content-center align-items-center">
     @for (service of servicesSectionData; track $index) {
-    <!-- <div
-      class="service d-flex justify-content-center align-items-center flex-column col-5"
-    >
-      <img src="{{ service.ImagePath1 }}" alt="" class="col-12 card-img-top" />
-      <h6>{{ service.Name }}</h6>
-      <p>{{ service.Desc }}</p>
-    </div> -->
+
     <div
-      class="card d-flex justify-content-center align-items-center flex-column col-5"
+      [routerLink]="['/service/', service.Id]"
+      class="card d-flex justify-content-center align-items-center flex-column col-5 p-0 mx-3 mb-4"
     >
       <img
-        class="card-img-top col-12"
+        class="card-img-top col-12 rounded-5"
         src="{{ service.ImagePath1 }}"
         alt="Title"
       />
+      <div class="icon d-flex justify-content-center align-items-center">
+        <img src="{{ service.IconPath }}" alt="" class="" />
+      </div>
       <div class="card-body">
-        <h4 class="card-title">Title</h4>
-        <p class="card-text">Text</p>
+        <h5 class="card-title">{{ service.Name }}</h5>
+        <p class="card-text">{{ service.Desc }}</p>
       </div>
     </div>
     }

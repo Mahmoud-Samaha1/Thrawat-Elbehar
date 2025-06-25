@@ -62,7 +62,7 @@ export class FooterComponent implements OnInit {
       .subscribe(() => {
         this.getfooterData();
       });
-    this.getfooterData()
+    // this.getfooterData()
   }
   getfooterData() {
     this._dataService.getData<websiteDataModel[]>(this.url, this.footerEndPoint).subscribe(res => this.footerData = res)

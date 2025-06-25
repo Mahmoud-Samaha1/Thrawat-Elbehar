@@ -25,6 +25,10 @@ export const routes: Routes = [
     path: "services",
     loadComponent: () => import("./pages/services/services.component").then(m => m.ServicesComponent)
   },
+  {
+    path: "service/:id",
+    loadComponent: () => import("./pages/services/service-details/service-details.component").then(m => m.ServiceDetailsComponent)
+  },
 
   { path: '**', redirectTo: '' },
 ];

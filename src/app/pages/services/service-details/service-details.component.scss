@@ -1,0 +1,38 @@
+@import '../../../../styles/abstracts/variables';
+
+section {
+  background-image: url(/images/services/service-details-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  font-family: $font-bold;
+  color: $dark-blue-color;
+
+  .service-title {
+    height: 600px;
+
+    .icon-image {
+      width: 120px;
+      margin-bottom: 1rem;
+      filter: brightness(85);
+    }
+
+    h2 {
+      font-size: 2rem;
+      background-color: white;
+      border-radius: 5rem;
+      word-spacing: .5rem;
+    }
+
+    p {
+      font-family: $font-regular;
+    }
+
+  }
+
+  .service-image {
+    img {
+      filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5))
+    }
+  }
+}

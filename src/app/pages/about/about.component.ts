@@ -38,8 +38,8 @@ export class AboutComponent {
         this.getAboutSectionData();
         this.getTeamsData();
       });
-    this.getAboutSectionData()
-    this.getTeamsData()
+    // this.getAboutSectionData()
+    // this.getTeamsData()
   }
   getAboutSectionData() {
     return this._aboutService.getAboutData().subscribe(res => {

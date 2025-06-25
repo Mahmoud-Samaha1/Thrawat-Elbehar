@@ -44,7 +44,7 @@ export class AboutSectionComponent implements OnInit, OnDestroy {
 
 
 
-    this.getAboutSectionData()
+    // this.getAboutSectionData()
   }
   ngOnDestroy(): void {
 

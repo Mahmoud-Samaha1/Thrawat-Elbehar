@@ -7,11 +7,12 @@ import { servicesSectionModel } from '../../models/servicesSection.model';
 import { environment } from '../../../environments/environment';
 import { LangService } from '../../shared/services/lang-service.service';
 import { Subject, takeUntil } from 'rxjs';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, TranslateModule],
+  imports: [HeaderComponent, FooterComponent, TranslateModule, RouterModule],
   templateUrl: './services.component.html',
   styleUrl: './services.component.scss'
 })
@@ -31,6 +32,6 @@ export class ServicesComponent implements OnInit {
       .subscribe(() => {
         this.getServicesSectionData();
       });
-    this.getServicesSectionData()
+    // this.getServicesSectionData()
   }
 }

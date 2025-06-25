@@ -54,7 +54,7 @@ html[dir="ltr"] .news-wrapper::before {}
     background-repeat: no-repeat;
     position: absolute;
     z-index: 0;
-    right: 9%;
+    inset-inline-start: 9%;
     bottom: 0%;
 
     @media (max-width:768px) {

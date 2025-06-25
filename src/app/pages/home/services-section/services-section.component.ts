@@ -137,6 +137,6 @@ export class ServicesSectionComponent implements OnInit {
       .subscribe(() => {
         this.getServicesSectionData();
       });
-    this.getServicesSectionData();
+    // this.getServicesSectionData();
   }
 }

@@ -12,7 +12,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class HeroSectionComponent implements OnInit {
   _langService = inject(LangService)
-  currentLang: string | null = localStorage.getItem("appLanguage");
+  // currentLang: string | null = localStorage.getItem("appLanguage");
+  currentLang = this._langService.langChanged$;
 
   constructor() {
 
@@ -23,7 +24,7 @@ export class HeroSectionComponent implements OnInit {
 
   changeLang(language: string) {
     this._langService.switchLanguage(language)
-    this.currentLang = language
+    this.currentLang.next(language)
     let newsBgLtr = document.querySelector('.news-bg') as HTMLElement;
     if (language == 'ar') {
       newsBgLtr.classList.remove("news-bg-ltr")

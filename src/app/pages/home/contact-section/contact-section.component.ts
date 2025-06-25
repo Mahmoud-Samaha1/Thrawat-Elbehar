@@ -32,6 +32,6 @@ export class ContactSectionComponent implements OnInit {
         this.getWebsiteSectionData();
       });
 
-    this.getWebsiteSectionData()
+    // this.getWebsiteSectionData()
   }
 }
