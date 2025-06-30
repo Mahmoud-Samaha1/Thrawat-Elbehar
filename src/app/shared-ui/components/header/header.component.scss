@@ -61,6 +61,13 @@ header {
       background-color: $dark-blue-color;
       top: 5px;
       left: -5px;
+
+      @media (max-width:1200px) {
+
+        & {
+          content: none;
+        }
+      }
     }
   }
 

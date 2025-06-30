@@ -12,7 +12,7 @@ section {
 
       .member {
         position: relative;
-        transition: 10s;
+        // transition: 10s;
         padding: 0px !important;
 
         img {
@@ -50,6 +50,12 @@ section {
       font-family: $font-bold;
       color: white;
       --bs-gutter-x: 0rem;
+
+      @media (max-width:991px) {
+        img {
+          width: 25% !important;
+        }
+      }
     }
   }
 }

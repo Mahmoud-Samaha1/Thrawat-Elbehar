@@ -1,8 +1,16 @@
 <section class="row">
-  <div class="wrapper row col-12">
-    <div class="col-9 members row">
+  <div class="wrapper row flex-row-reverse col-12">
+    <div
+      class="col-lg-3 col-12 members-title row flex-column justify-content-center align-items-center"
+    >
+      <img src="/images/about/group-users.png" alt="" class="w-50" />
+      <h2 class="col-12 text-center">
+        {{ "about-page.members.title" | translate }}
+      </h2>
+    </div>
+    <div class="col-lg-9 col-12 members row">
       @for(member of membersSectionData() ; track $index){
-      <div class="member col-4">
+      <div class="member col-md-4 col-6">
         <img
           src="{{ membersSectionData()[0].ImagePath }}"
           class="card-img-top"
@@ -20,14 +28,6 @@
         </div>
       </div>
       }
-    </div>
-    <div
-      class="col-3 members-title row flex-column justify-content-center align-items-center"
-    >
-      <img src="/images/about/group-users.png" alt="" class="w-50" />
-      <h2 class="col-12 text-center">
-        {{ "about-page.members.title" | translate }}
-      </h2>
     </div>
   </div>
 </section>

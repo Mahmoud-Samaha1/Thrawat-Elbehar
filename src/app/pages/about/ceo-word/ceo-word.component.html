@@ -1,15 +1,15 @@
-<section class="d-flex justify-content-center align-items-center w-100">
-  <div class="wrapper d-flex w-75">
-    <div class="col-4">
+<section class="row justify-content-center align-items-center w-100">
+  <div class="wrapper row col-12 w-75">
+    <div class="col-lg-4 d-none d-lg-block">
       <img src="/images/about/manager-img.png" alt="" class="w-100" />
     </div>
     @if(ceoWordSectionData().length){
     <div
-      class="col-8 word d-flex flex-column justify-content-center align-items-center"
+      class="col-lg-8 col-12 word d-flex flex-column justify-content-center align-items-center"
     >
       <div class="row mb-2">
         <h3 class="col-12">{{ "about-page.admin-word" | translate }}</h3>
-        <p class="col-11 text-black">
+        <p class="col-lg-11 col-12 text-lg-end text-center text-black">
           {{ ceoWordSectionData()[0].CEO_Speach }}
         </p>
         <small class="text-center">{{ "about-page.small" | translate }}</small>

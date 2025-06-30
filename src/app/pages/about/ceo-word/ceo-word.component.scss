@@ -6,6 +6,12 @@ section {
   position: relative;
 
   .wrapper {
+    @media (max-width:1024px) {
+
+      & {
+        width: 100% !important;
+      }
+    }
 
     &::after {}
   }
@@ -16,7 +22,18 @@ section {
 
   .word {
     position: relative;
-    margin-inline-start: 2rem;
+    // margin-inline-start: 2rem;
+
+    @media (max-width:1024px) {
+      & {
+        margin: 0px !important;
+      }
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
 
     &::before {
       content: url('/images/about/start-qoutation.png');
@@ -24,7 +41,7 @@ section {
       height: 140px;
       top: -10px;
       position: absolute;
-      inset-inline-start: -123px;
+      inset-inline-start: -14%;
     }
 
     &::after {
@@ -33,7 +50,7 @@ section {
       height: 140px;
       bottom: 10px;
       position: absolute;
-      inset-inline-end: -30px;
+      inset-inline-end: -3%;
     }
   }
 

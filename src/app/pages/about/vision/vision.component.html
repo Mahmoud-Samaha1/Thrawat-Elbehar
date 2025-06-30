@@ -1,25 +1,25 @@
 <section class="d-flex justify-content-center align-items-center w-100">
-  <div class="wrapper rounded-5 d-flex p-5 shadow w-75">
+  <div class="wrapper row rounded-5 p-lg-5 p-3 shadow w-75">
     @if(visionSectionData().length){
     <div
-      class="col-8 d-flex flex-column justify-content-center align-items-center"
+      class="col-lg-8 col-12 d-flex flex-column justify-content-center align-items-center"
     >
-      <div class="row mb-2">
+      <div class="row mb-2 text-lg-end text-center">
         <h3 class="col-12 text-black">{{ "about-page.Vision" | translate }}</h3>
-        <p class="col-10">{{ visionSectionData()[0].Vision }}</p>
+        <p class="col-lg-10 col-12">{{ visionSectionData()[0].Vision }}</p>
       </div>
-      <div class="row mb-2">
+      <div class="row mb-2 text-lg-end text-center">
         <h3 class="col-12 text-black">{{ "about-page.Mision" | translate }}</h3>
-        <p class="col-10">{{ visionSectionData()[0].Mission }}</p>
+        <p class="col-lg-10 col-12">{{ visionSectionData()[0].Mission }}</p>
       </div>
-      <div class="row">
+      <div class="row text-lg-end text-center">
         <h3 class="col-12 text-black">{{ "about-page.Values" | translate }}</h3>
-        <p class="col-10">{{ visionSectionData()[0].Value }}</p>
+        <p class="col-lg-10 col-12">{{ visionSectionData()[0].Value }}</p>
       </div>
     </div>
     }
 
-    <div class="col-4">
+    <div class="col-lg-4 col-12 d-none d-lg-block">
       <img src="/images/about/vision.png" alt="" class="w-100" />
     </div>
   </div>

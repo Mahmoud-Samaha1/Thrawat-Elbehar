@@ -1,7 +1,7 @@
 @import '../../../../styles/abstracts/variables';
 
 section {
-  background-image: url(/images/services/service-details-bg.png);
+  background-image: linear-gradient(360deg, #0000002e, #0000002e), url(/images/services/service-details-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -9,10 +9,10 @@ section {
   color: $dark-blue-color;
 
   .service-title {
-    height: 600px;
+
 
     .icon-image {
-      width: 120px;
+      width: 110px;
       margin-bottom: 1rem;
       filter: brightness(85);
     }
@@ -35,4 +35,14 @@ section {
       filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5))
     }
   }
+
+  .back-btn {
+
+
+
+    color: white;
+    background: linear-gradient(0deg, $dark-red , $red-color );
+    border-radius: 2rem;
+  }
+
 }

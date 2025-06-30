@@ -1,32 +1,46 @@
 <app-header class="position-relative"></app-header>
-<section class="container-fluid py-3">
-  <div
-    class="service-title col-12 row flex-column justify-content-center align-content-center align-items-center"
-  >
-    <img
-      src="{{ servicesDetailsData[0].IconPath }}"
-      alt=""
-      class="col-12 icon-image"
-    />
-    <h2 class="col-12 text-center w-50 py-2">
-      {{ servicesDetailsData[0].Name }}
-    </h2>
+<section class="container-fluid py-5">
+  <div class="service-title row justify-content-center align-items-center">
+    <div class="col-12 d-flex justify-content-center align-items-center">
+      <img
+        src="{{ servicesDetailsData[0].IconPath }}"
+        alt=""
+        class="icon-image"
+      />
+    </div>
+
+    <div
+      class="col-12 text-center d-flex justify-content-center align-items-center"
+    >
+      <h2 class="w-50 text-center py-2">
+        {{ servicesDetailsData[0].Name }}
+      </h2>
+    </div>
+
     <p class="fs-4 col-6 text-center text-white mt-3">
       {{ servicesDetailsData[0].Desc }}
     </p>
     <div
-      class="col-8 row service-image justify-content-center align-content-center"
+      class="col-12 row service-image justify-content-center align-content-center"
     >
       <img
         src="{{ servicesDetailsData[0].ImagePath1 }}"
         alt=""
-        class="col-5 mx-1 rounded-5"
+        class="col-4 mx-1 rounded-5"
       />
       <img
         src="{{ servicesDetailsData[0].ImagePath2 }}"
         alt=""
-        class="col-5 mx-1 rounded-5"
+        class="col-4 mx-1 rounded-5"
       />
+    </div>
+    <div
+      class="col-12 d-flex justify-content-center align-items-center text-center"
+      [routerLink]="['/services']"
+    >
+      <button type="button" class="btn back-btn w-25 mt-3">
+        {{ "back" | translate }}
+      </button>
     </div>
   </div>
 </section>
