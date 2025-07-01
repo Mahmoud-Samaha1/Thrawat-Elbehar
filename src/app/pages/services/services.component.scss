@@ -121,3 +121,88 @@ section {
     -o-transform: translateY(15%);
   }
 }
+
+// _______________________________________________________
+// Desktop first, so override for smaller screens
+@media (max-width: 1200px) {
+  .card {
+    width: 40% !important;
+  }
+
+  .service-title {
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    h5 {
+      width: 50% !important;
+      font-size: 1rem;
+      letter-spacing: 10px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .card {
+    width: 80% !important;
+    margin: 0 auto 1.5rem auto;
+  }
+
+  .service-title {
+    height: auto;
+    padding: 3rem 0;
+
+    img {
+      width: 100px;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    h5 {
+      width: 70% !important;
+      font-size: 0.9rem;
+      letter-spacing: 6px;
+    }
+  }
+
+  .icon {
+    width: 80px;
+    height: 80px;
+    bottom: 35% !important;
+  }
+
+  .card-img-top {
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 90% !important;
+    margin: 0 auto 1.5rem;
+  }
+
+  .service-title {
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    h5 {
+      width: 90% !important;
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+    }
+  }
+
+  .icon {
+    width: 70px;
+    height: 70px;
+    bottom: 15%;
+  }
+
+  .card-img-top {
+    height: 180px !important;
+  }
+}

@@ -17,7 +17,7 @@
       </h2>
     </div>
 
-    <p class="fs-4 col-6 text-center text-white mt-3">
+    <p class="fs-4 col-12 col-md-8 col-lg-6 text-center text-white mt-3">
       {{ servicesDetailsData[0].Desc }}
     </p>
     <div
@@ -26,19 +26,20 @@
       <img
         src="{{ servicesDetailsData[0].ImagePath1 }}"
         alt=""
-        class="col-4 mx-1 rounded-5"
+        class="col-10 col-md-5 col-lg-4 mx-1 mb-3 rounded-5"
       />
       <img
         src="{{ servicesDetailsData[0].ImagePath2 }}"
         alt=""
-        class="col-4 mx-1 rounded-5"
+        class="col-10 col-md-5 col-lg-4 mx-1 mb-3 rounded-5"
       />
     </div>
+
     <div
       class="col-12 d-flex justify-content-center align-items-center text-center"
       [routerLink]="['/services']"
     >
-      <button type="button" class="btn back-btn w-25 mt-3">
+      <button type="button" class="btn back-btn w-50 w-md-25 mt-3">
         {{ "back" | translate }}
       </button>
     </div>

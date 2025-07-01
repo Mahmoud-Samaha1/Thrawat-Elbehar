@@ -6,17 +6,17 @@
     <img src="/images/services/service-icon.png" alt="" class="col-12" />
     <h2 class="col-12 text-center">{{ "services.title" | translate }}</h2>
     <h5
-      class="col-12 d-flex justify-content-center align-items-center text-center p-1 rounded-5 w-25"
+      class="col-12 col-md-6 col-lg-4 text-center d-flex justify-content-center align-items-center p-1 rounded-5"
     >
       TharawatSeas
     </h5>
   </div>
-  <div class="services col-12 row justify-content-center align-items-center">
+  <div class="services row justify-content-center align-items-stretch">
     @for (service of servicesSectionData; track $index) {
 
     <div
       [routerLink]="['/service/', service.Id]"
-      class="card d-flex justify-content-center align-items-center flex-column col-5 p-0 mx-3 mb-4"
+      class="card d-flex justify-content-center align-items-center flex-column col-md-5 col-12 p-0 mx-3 mb-4"
     >
       <img
         class="card-img-top col-12 rounded-5"
