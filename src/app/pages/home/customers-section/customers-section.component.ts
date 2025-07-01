@@ -24,7 +24,12 @@ export class CustomersSectionComponent implements OnInit {
   _langService = inject(LangService)
 
   getServicesSectionData() {
-    return this._http.get<customerSectionModel[]>(`${this.url}${this.endPoint}`).subscribe(res => { this.customersSectionData = res; console.log(this.customersSectionData); });
+    return this._http.get<customerSectionModel[]>(`${this.url}${this.endPoint}`)
+      .subscribe(
+        res => {
+          this.customersSectionData = res.filter(customer => customer.ShowInHome)
+          console.log(this.customersSectionData);
+        });
   }
   customOptions: OwlOptions;
 
@@ -67,7 +72,7 @@ export class CustomersSectionComponent implements OnInit {
           margin: 15,
         },
         1200: {
-          items: 4,
+          items: 3,
           margin: 10,
         },
         1440: {
@@ -83,6 +88,5 @@ export class CustomersSectionComponent implements OnInit {
       .subscribe(() => {
         this.getServicesSectionData(); // ⬅️ أعد جلب البيانات
       });
-    this.getServicesSectionData()
   }
 }

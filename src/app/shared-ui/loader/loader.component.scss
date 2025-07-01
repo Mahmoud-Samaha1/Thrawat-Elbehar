@@ -1,0 +1,26 @@
+.welcome-message {
+  position: fixed; // ضروري لتغطية الشاشة
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: white; // أو أي لون خلفية
+  overflow: hidden; // تمنع أي Scroll أثناء اللودر
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  padding: 1rem;
+
+  img {
+    width: 100%;
+    height: auto; // مهم لتفادي التمدد الزائد
+    object-fit: contain;
+  }
+}

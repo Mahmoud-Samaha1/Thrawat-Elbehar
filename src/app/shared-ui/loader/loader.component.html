@@ -1,1 +1,9 @@
-<p>loader works!</p>
+<section
+  *ngIf="_loaderService.loading()"
+  [@fadeOutOnLeave]
+  class="welcome-message"
+>
+  <div class="text row justify-content-center flex-column m-auto">
+    <img src="/images/logo-.gif" alt="loading..." />
+  </div>
+</section>

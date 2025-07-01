@@ -2,11 +2,20 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject, Injector, signal } from '@angular/core';
 import { LangService } from '../../shared/services/lang-service.service';
+import { finalize } from 'rxjs';
+import { LoaderService } from '../../shared/services/loader.service';
 
 export const apiInterceptor: HttpInterceptorFn = (req, next) => {
   let _langService = inject(LangService)
-  req = req.clone({
+  let _loaderService = inject(LoaderService)
+
+  _loaderService.showLoader()
+
+  const clonedReq = req.clone({
     headers: req.headers.append("Accept-Language", _langService.langChanged$.value!)
   })
-  return next(req)
+
+  return next(clonedReq).pipe(
+    finalize(() => _loaderService.hideLoader())
+  )
 }

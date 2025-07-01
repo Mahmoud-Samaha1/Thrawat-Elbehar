@@ -17,11 +17,14 @@ import { LangService } from '../../../shared/services/lang-service.service';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
+
 export class FooterComponent implements OnInit {
   private destroy$ = new Subject<void>();
   _langService = inject(LangService)
   logo: string = "/images/white-logo.png";
-  email!: string;
+  user: User = {
+    email: ''
+  }
   _http = inject(HttpClient)
   _dataService = inject(HomePageService)
   _SweetalertService = inject(SweetalertService)
@@ -31,23 +34,21 @@ export class FooterComponent implements OnInit {
   @Input() websiteData!: websiteDataModel[]
   footerData!: websiteDataModel[]
   emailFormSubmit(emailForm: NgForm) {
-    console.log(this.email);
-    this._http.post<any>(`${this.url}${this.endPoint}`, {
-      "Name": "text",
-      "Phone": "text",
-      "Email": this.email,
-      "Subject": "text",
-      "Message": "textarea"
-    }).subscribe(
+    console.log(this.user.email);
+    this._http.post<any>(`${this.url}${this.endPoint}`,
+      {
+        "Email": this.user.email.trim(),
+      }
+    ).subscribe(
       (res) => {
         console.log(res);
 
         if (res.success == true) {
-          this.email = ''
+          this.user.email = ''
           this._SweetalertService.toastDoneWithMessage('Email Sent Successfully')
 
         } else {
-          this.email = ''
+          this.user.email = ''
           this._SweetalertService.toastErrorWithMessage(`Email did n't Send `)
 
         }
@@ -62,10 +63,13 @@ export class FooterComponent implements OnInit {
       .subscribe(() => {
         this.getfooterData();
       });
-    // this.getfooterData()
+
   }
   getfooterData() {
     this._dataService.getData<websiteDataModel[]>(this.url, this.footerEndPoint).subscribe(res => this.footerData = res)
   }
 
+}
+interface User {
+  email: string;
 }

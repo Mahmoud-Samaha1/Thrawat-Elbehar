@@ -55,13 +55,21 @@
             class="form-control"
             id="emailInput"
             placeholder="{{ 'footer.placeholder' | translate }}"
-            [(ngModel)]="email"
+            [(ngModel)]="user['email']"
             required
+            email
             #emailInput="ngModel"
             [ngModelOptions]="{ standalone: true }"
           />
         </div>
 
+        @if (emailInput.invalid && emailInput.touched) {
+        <div class="text-danger">
+          @if (emailInput.errors?.['email']) {
+          <small>Invalid email format</small>
+          }
+        </div>
+        }
         <button
           [ngClass]="{ disabled: !emailInput.valid }"
           class="btn participate-btn rounded-4 w-50 mt-3 d-flex justify-content-center align-items-center"

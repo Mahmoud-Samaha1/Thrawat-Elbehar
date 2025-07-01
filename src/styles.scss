@@ -127,6 +127,14 @@ body {
 }
 
 // customers slider
+.customer-slider {
+
+
+  owl-carousel-o {
+    width: 100%;
+  }
+}
+
 .customer-slider .owl-carousel {
   position: relative !important;
   display: flex !important;
@@ -134,7 +142,7 @@ body {
   align-items: center;
 
   .owl-stage-outer {
-    width: 75%;
+    width: 100%;
 
     @media (max-width:1024px) {
       width: 100% !important;
@@ -174,7 +182,7 @@ body {
 }
 
 .customer-slider .owl-nav .owl-next {
-  margin-inline-end: 10rem !important;
+  margin-inline-end: 4rem !important;
 
   @media (max-width:1024px) {
     margin-inline-end: 1rem !important;
@@ -182,7 +190,7 @@ body {
 }
 
 .customer-slider .owl-nav .owl-prev {
-  margin-inline-start: 10rem !important;
+  margin-inline-start: 4rem !important;
 
   @media (max-width:1024px) {
     margin-inline-start: 1rem !important;

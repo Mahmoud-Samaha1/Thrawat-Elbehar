@@ -46,5 +46,8 @@
   "services": {
     "title": "Services"
   },
+  "news": {
+    "title": "News"
+  },
   "back": "Back"
 }
