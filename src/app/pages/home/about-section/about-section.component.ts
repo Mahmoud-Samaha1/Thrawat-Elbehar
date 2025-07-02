@@ -9,11 +9,12 @@ import { CommonModule } from '@angular/common';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { AboutService } from '../../about/about.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-about-section',
   standalone: true,
-  imports: [TranslateModule, CommonModule, FormsModule],
+  imports: [TranslateModule, CommonModule, FormsModule, RouterModule],
   templateUrl: './about-section.component.html',
   styleUrl: './about-section.component.scss'
 })

@@ -11,7 +11,7 @@
     {{ aboutSectionData[0].About }}
   </p>
   <div class="d-flex justify-content-center align-items-center text-center">
-    <button type="button" class="btn more-btn">
+    <button type="button" class="btn more-btn" [routerLink]="['/about']">
       {{ "aboutSection.more" | translate }}
     </button>
   </div>

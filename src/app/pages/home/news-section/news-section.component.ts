@@ -3,7 +3,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { newsSectionModel } from '../../../models/newsSection.model copy';
+import { newsSectionModel } from '../../../models/newsSection.model';
 import { Subject, takeUntil } from 'rxjs';
 import { LangService } from '../../../shared/services/lang-service.service';
 import { TranslateModule } from '@ngx-translate/core';

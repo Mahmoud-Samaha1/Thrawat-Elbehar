@@ -1,6 +1,4 @@
 export interface newsSectionModel {
-
-
   "Id": string,
   "Title": string,
   "Desc": string,
