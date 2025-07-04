@@ -29,7 +29,7 @@ export class FooterComponent implements OnInit {
   _dataService = inject(HomePageService)
   _SweetalertService = inject(SweetalertService)
   url: string = environment.apiUrl
-  endPoint: string = "API/Contactus/Post"
+  endPoint: string = "API/NewsSubscribers/Post"
   footerEndPoint: string = "API/WebsiteData/Get"
   @Input() websiteData!: websiteDataModel[]
   footerData!: websiteDataModel[]

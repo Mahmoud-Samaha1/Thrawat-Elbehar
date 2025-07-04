@@ -1,0 +1,85 @@
+@import '../../../styles/abstracts/variables';
+
+section {
+    background-image: linear-gradient(180deg, rgba(168, 204, 250, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    font-family: $font-bold;
+    color: $dark-blue-color;
+
+    .contact-title {
+        height: 600px;
+
+        img {
+            width: 130px;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        h5 {
+            font-family: $font-regular-en;
+            letter-spacing: 15px;
+            color: white;
+            background-color: $light-blue-color;
+        }
+
+    }
+
+    .form-wrapper {
+        form {
+            input {}
+        }
+    }
+
+    .social-media {
+        .icon {
+            background-color: $sky-color;
+            margin: .5rem;
+            padding-top: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 40%);
+
+            i {
+                font-size: 3rem;
+            }
+
+            p {}
+
+            &:hover {
+                cursor: pointer;
+
+                i {
+
+                    animation: MoveUpDown 1.5s linear infinite;
+                }
+            }
+        }
+
+    }
+}
+
+@keyframes MoveUpDown {
+
+    0%,
+    100% {
+        transform: translateY(0%);
+        -webkit-transform: translateY(0%);
+        -moz-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        -o-transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(15%);
+        -webkit-transform: translateY(15%);
+        -moz-transform: translateY(15%);
+        -ms-transform: translateY(15%);
+        -o-transform: translateY(15%);
+    }
+}
+
+// _______________________________________________________

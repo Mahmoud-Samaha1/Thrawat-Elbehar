@@ -46,6 +46,22 @@
   "services": {
     "title": "Services"
   },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "ٍٍٍٍSend",
+    "whatts": "whatsapp",
+    "location": "Location",
+    "validators": {
+      "name": "Name is required",
+      "phone": "Please enter a valid Saudi mobile number (e.g. 05XXXXXXXX or +9665XXXXXXX)",
+      "email": "Valid email is required"
+    }
+  },
   "news": {
     "title": "News"
   },
