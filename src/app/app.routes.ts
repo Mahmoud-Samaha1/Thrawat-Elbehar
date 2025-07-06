@@ -37,6 +37,10 @@ export const routes: Routes = [
     path: "news/:id",
     loadComponent: () => import("./pages/news/news-details/news-details.component").then(m => m.NewsDetailsComponent)
   },
+  {
+    path: "contact",
+    loadComponent: () => import("./pages/contact/contact.component").then(m => m.ContactComponent)
+  },
 
   { path: '**', redirectTo: '' },
 ];
