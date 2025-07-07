@@ -1,0 +1,156 @@
+@import '../../../../styles/abstracts/variables';
+
+section {
+  width: 100%;
+  font-family: $font-bold;
+  color: $dark-blue-color;
+  position: relative;
+
+
+  .text-wrapper {
+    background-color: $sky-color;
+    border-radius: 2rem;
+    box-shadow: 0px 7px 6px rgba(0, 0, 0, 0.2509803922);
+    position: relative;
+
+    .news-title {
+      position: relative;
+
+      .icon-wrapper {
+        height: 420px;
+        position: relative;
+
+        div {
+          border-radius: 0% 0% 50% 0%;
+          background-color: white;
+          width: 500px;
+          height: 500px;
+          padding: 5rem;
+          position: absolute;
+          top: 0.1%;
+          inset-inline-end: .9%;
+        }
+
+
+        .icon-image {
+          width: 100%;
+          margin-bottom: 1rem;
+
+        }
+      }
+
+
+
+      h2 {
+        font-size: 2rem;
+        color: $red-color;
+        // background-color: white;
+        // border-radius: 5rem;
+        word-spacing: .5rem;
+      }
+
+      p {
+        font-family: $font-regular;
+      }
+    }
+  }
+
+  .news-images {
+    img {
+      filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5))
+    }
+  }
+
+  .back-btn {
+
+
+
+    color: white;
+    background: linear-gradient(0deg, $dark-red , $red-color );
+    border-radius: 2rem;
+  }
+
+}
+
+// ____________________________
+// responsive
+@media (max-width: 1200px) {
+  .news-title {
+    h2 {
+      font-size: 1.8rem;
+      width: 70% !important;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+
+    .icon-image {
+      width: 90px;
+    }
+
+    .back-btn {
+      width: 35% !important;
+    }
+
+    .news-image img {
+      width: 45% !important;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .news-title {
+    h2 {
+      font-size: 1.5rem;
+      width: 90% !important;
+      padding: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      width: 90% !important;
+      margin: 1rem auto 0;
+    }
+
+    .icon-image {
+      width: 70px;
+    }
+
+    .news-image img {
+      width: 80% !important;
+      margin-bottom: 1rem;
+    }
+
+    .back-btn {
+      width: 60% !important;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .news-title {
+    h2 {
+      font-size: 1.3rem;
+      width: 100% !important;
+    }
+
+    p {
+      font-size: 0.95rem;
+      width: 100% !important;
+    }
+
+    .icon-image {
+      width: 60px;
+    }
+
+    .news-image img {
+      width: 100% !important;
+    }
+
+    .back-btn {
+      width: 80% !important;
+    }
+  }
+}

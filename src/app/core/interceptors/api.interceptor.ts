@@ -6,8 +6,9 @@ import { finalize } from 'rxjs';
 import { LoaderService } from '../../shared/services/loader.service';
 
 export const apiInterceptor: HttpInterceptorFn = (req, next) => {
-  let _langService = inject(LangService)
+  const injector = inject(Injector)
   let _loaderService = inject(LoaderService)
+  const _langService = injector.get(LangService);
 
   _loaderService.showLoader()
 

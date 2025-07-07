@@ -5,18 +5,18 @@
     >
       <img [src]="logo" alt="" class="" />
     </div>
-    @if (footerData && footerData.length) {
+    @if (footerData() && footerData().length) {
     <div
       class="col-md-6 footer-card middle-card py-2 d-flex flex-column justify-content-center align-items-center"
     >
       <p class="m-0 text-center">
-        {{ footerData[0].Footer }}
+        {{ footerData()[0].Footer }}
       </p>
       <div
         class="social-icons fa-2x mt-4 d-flex justify-content-center align-items-center"
       >
         <a
-          href="{{ footerData[0].Facebook }}"
+          href="{{ footerData()[0].Facebook }}"
           class="icon mx-1"
           target="_blank"
         >
@@ -24,14 +24,18 @@
         </a>
 
         <a
-          href="{{ footerData[0].Instagram }}"
+          href="{{ footerData()[0].Instagram }}"
           class="icon mx-1"
           target="_blank"
         >
           <i class="fi fi-brands-instagram"></i>
         </a>
 
-        <a href="{{ footerData[0].TikTok }}" class="icon mx-1" target="_blank">
+        <a
+          href="{{ footerData()[0].TikTok }}"
+          class="icon mx-1"
+          target="_blank"
+        >
           <i class="fi fi-brands-tik-tok"></i>
         </a>
       </div>

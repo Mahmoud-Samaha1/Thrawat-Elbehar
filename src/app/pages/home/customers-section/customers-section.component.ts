@@ -86,7 +86,7 @@ export class CustomersSectionComponent implements OnInit {
     this._langService.langChanged$
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => {
-        this.getServicesSectionData(); // ⬅️ أعد جلب البيانات
+        this.getServicesSectionData();
       });
   }
 }

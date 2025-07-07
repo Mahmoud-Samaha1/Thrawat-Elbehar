@@ -34,11 +34,14 @@
           >
             <a class="nav-link">{{ "header.Services" | translate }}</a>
           </li>
-          <li class="nav-item text-center text-lg-end">
-            <a class="nav-link">{{ "header.Customers" | translate }}</a>
-          </li>
           <li class="nav-item text-center text-lg-end" [routerLink]="['/news']">
             <a class="nav-link">{{ "header.News" | translate }}</a>
+          </li>
+          <li
+            class="nav-item text-center text-lg-end"
+            [routerLink]="['/clients']"
+          >
+            <a class="nav-link">{{ "header.Customers" | translate }}</a>
           </li>
           <li class="nav-item text-center text-lg-end">
             <a class="nav-link">{{ "header.Gallery" | translate }}</a>
@@ -46,14 +49,12 @@
           <li class="nav-item text-center text-lg-end">
             <a class="nav-link">{{ "header.Media" | translate }}</a>
           </li>
-          <li
-            class="nav-item text-center text-lg-end"
-            [routerLink]="['/contact']"
-          >
-            <a class="nav-link">{{ "header.Contact-us" | translate }}</a>
-          </li>
         </ul>
-        <button type="button" class="btn contact-btn py-2 px-3 col-lg-2">
+        <button
+          type="button"
+          class="btn contact-btn py-2 px-3 col-lg-2"
+          [routerLink]="['/contact']"
+        >
           {{ "header.Contact-us" | translate }}
         </button>
         <div
@@ -66,11 +67,11 @@
           >
             <img src="images/translate-icon.png" alt="" class="w-100" />
           </button>
-          @if(headerData){
+          @if(headerData()){
           <a
             type="button"
             target="_blank"
-            href="{{ headerData[0].Facebook }}"
+            href="{{ headerData()[0]?.Facebook }}"
             class="btn social-btn col-2 col-sm-1 col-lg-3 d-flex justify-content-center align-items-center p-0"
           >
             <img src="images/facebook.png" alt="" class="w-100" />
@@ -78,7 +79,7 @@
           <a
             type="button"
             target="_blank"
-            href="{{ headerData[0].Instagram }}"
+            href="{{ headerData()[0]?.Instagram }}"
             class="btn social-btn col-2 col-sm-1 col-lg-3 d-flex justify-content-center align-items-center p-0"
           >
             <img src="images/instagram.png" alt="" class="w-100" />
@@ -86,7 +87,7 @@
           <a
             type="button"
             target="_blank"
-            href="{{ headerData[0].TikTok }}"
+            href="{{ headerData()[0]?.TikTok }}"
             class="btn social-btn col-2 col-sm-1 col-lg-3 d-flex justify-content-center align-items-center p-0"
           >
             <img src="images/tiktok.png" alt="" class="w-100" />

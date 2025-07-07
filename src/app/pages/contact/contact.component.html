@@ -17,7 +17,7 @@
       </h5>
     </div>
     <div class="col-12 row mb-3">
-      <div class="col-6 form-wrapper">
+      <div class="col-lg-6 col-12 form-wrapper">
         <form
           [formGroup]="feedbackForm"
           (ngSubmit)="visitorsMessagesSubmit()"
@@ -107,46 +107,60 @@
             ></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary">
+          <button
+            type="submit"
+            class="btn btn-submit w-100"
+            [disabled]="feedbackForm.invalid"
+          >
             {{ "contact.send" | translate }}
           </button>
         </form>
       </div>
-      <div class="col-6 row">
+      <!-- @if (contactData.length > 0) { -->
+      <div
+        class="col-lg-6 col-12 row d-flex justify-content-center align-items-center align-content-center"
+      >
         <div class="social-media col-12 row justify-content-center">
-          <div
-            class="icon col-5 d-flex justify-content-center align-items-center flex-column"
+          <a
+            href="'tel:' + {{ contactData()?.[0]?.Phone }}"
+            class="icon d-flex justify-content-center align-items-center flex-column"
           >
             <i class="fi fi-sr-phone-call"></i>
             <p>{{ "contact.phone" | translate }}</p>
-          </div>
-          <div
-            class="icon col-5 d-flex justify-content-center align-items-center flex-column"
+          </a>
+          <a
+            [href]="'https://wa.me/' + contactData()?.[0]?.Whatsapp"
+            class="icon d-flex justify-content-center align-items-center flex-column me-lg-2"
           >
             <i class="fi fi-brands-whatsapp"></i>
             <p>{{ "contact.whatts" | translate }}</p>
-          </div>
-          <div
-            class="icon col-5 d-flex justify-content-center align-items-center flex-column location"
-          >
-            <i class="fi fi-sr-marker"></i>
-            <p>
-              {{ "contact.location" | translate }}
-            </p>
-          </div>
-          <div
-            class="icon col-5 d-flex justify-content-center align-items-center flex-column email"
+          </a>
+          <!-- <a
+            href="{{contactData()[0].Location}}"
+              class="icon col-5 d-flex justify-content-center align-items-center flex-column location"
+            >
+              <i class="fi fi-sr-marker"></i>
+              <p>
+                {{ "contact.location" | translate }}
+              </p>
+            </a> -->
+          <a
+            [href]="'mailto:' + contactData()?.[0]?.Email"
+            class="icon col-12 d-flex justify-content-center align-items-center flex-column email"
           >
             <i class="fi fi-sr-envelope"></i>
             <p>
               {{ "contact.email" | translate }}
             </p>
-          </div>
+          </a>
         </div>
-        <div class="map col-12 justify-content-center align-items-center">
+        <div
+          class="map col-lg-10 col-12 justify-content-center align-items-center"
+        >
           <app-map></app-map>
         </div>
       </div>
+      <!-- } -->
     </div>
   </div>
 </section>

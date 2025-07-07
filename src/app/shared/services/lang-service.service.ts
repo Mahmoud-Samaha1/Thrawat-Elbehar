@@ -8,9 +8,8 @@ import { BehaviorSubject } from 'rxjs';
 export class LangService {
   currnetlang = localStorage.getItem("appLanguage");
   langChanged$ = new BehaviorSubject<string | null>(localStorage.getItem("appLanguage"));
-  _translateService = inject(TranslateService);
 
-  constructor() {
+  constructor(private _translateService: TranslateService) {
     this._translateService.setDefaultLang(localStorage.getItem("appLanguage")!);
     this._translateService.use(localStorage.getItem("appLanguage")!);
   }

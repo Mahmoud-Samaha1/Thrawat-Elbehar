@@ -28,6 +28,7 @@
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^5.3.3",
     "leaflet": "^1.9.4",
+    "ng-leaflet-universal": "^15.2.8",
     "ngx-owl-carousel-o": "^18.0.1",
     "ngx-translate-messageformat-compiler": "^7.1.0",
     "rxjs": "~7.8.0",

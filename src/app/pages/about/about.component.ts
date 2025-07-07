@@ -34,12 +34,10 @@ export class AboutComponent {
     this._langService.langChanged$
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => {
-
         this.getAboutSectionData();
         this.getTeamsData();
       });
-    // this.getAboutSectionData()
-    // this.getTeamsData()
+
   }
   getAboutSectionData() {
     return this._aboutService.getAboutData().subscribe(res => {

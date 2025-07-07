@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterContentInit, Component, inject, Input, input, OnInit } from '@angular/core';
+import { AfterContentInit, Component, computed, inject, Input, input, OnInit, effect } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { websiteDataModel } from '../../../models/websiteData.model';
 import { TranslateModule } from '@ngx-translate/core';
@@ -18,7 +18,7 @@ import { LangService } from '../../../shared/services/lang-service.service';
   styleUrl: './footer.component.scss'
 })
 
-export class FooterComponent implements OnInit {
+export class FooterComponent {
   private destroy$ = new Subject<void>();
   _langService = inject(LangService)
   logo: string = "/images/white-logo.png";
@@ -31,10 +31,10 @@ export class FooterComponent implements OnInit {
   url: string = environment.apiUrl
   endPoint: string = "API/NewsSubscribers/Post"
   footerEndPoint: string = "API/WebsiteData/Get"
-  @Input() websiteData!: websiteDataModel[]
-  footerData!: websiteDataModel[]
+  footerData = computed(() => this._dataService.websiteData())
+
   emailFormSubmit(emailForm: NgForm) {
-    console.log(this.user.email);
+
     this._http.post<any>(`${this.url}${this.endPoint}`,
       {
         "Email": this.user.email.trim(),
@@ -56,17 +56,6 @@ export class FooterComponent implements OnInit {
     )
   }
   constructor() {
-  }
-  ngOnInit(): void {
-    this._langService.langChanged$
-      .pipe(takeUntil(this.destroy$))
-      .subscribe(() => {
-        this.getfooterData();
-      });
-
-  }
-  getfooterData() {
-    this._dataService.getData<websiteDataModel[]>(this.url, this.footerEndPoint).subscribe(res => this.footerData = res)
   }
 
 }
