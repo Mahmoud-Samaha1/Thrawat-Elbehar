@@ -65,5 +65,14 @@
   "news": {
     "title": "News"
   },
+  "clients": {
+    "title": "Our Clients"
+  },
+  "media": {
+    "title": "Media"
+  },
+  "gallery": {
+    "title": "Gallery"
+  },
   "back": "Back"
 }

@@ -6,11 +6,12 @@ import { HttpClient } from '@angular/common/http';
 import { LangService } from '../../shared/services/lang-service.service';
 import { environment } from '../../../environments/environment';
 import { Subject, takeUntil } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-clients',
   standalone: true,
-  imports: [FooterComponent, HeaderComponent],
+  imports: [FooterComponent, HeaderComponent, TranslateModule],
   templateUrl: './clients.component.html',
   styleUrl: './clients.component.scss'
 })
@@ -22,7 +23,7 @@ export class ClientsComponent implements OnInit {
   _http = inject(HttpClient)
   _langService = inject(LangService)
   customersSectionData!: customerSectionModel[]
-  getServicesSectionData() {
+  getClientsData() {
     return this._http.get<customerSectionModel[]>(`${this.url}${this.endPoint}`)
       .subscribe(
         res => {
@@ -33,7 +34,7 @@ export class ClientsComponent implements OnInit {
     this._langService.langChanged$
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => {
-        this.getServicesSectionData(); // ⬅️ أعد جلب البيانات
+        this.getClientsData(); // ⬅️ أعد جلب البيانات
       });
   }
 }

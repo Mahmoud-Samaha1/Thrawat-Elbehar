@@ -17,15 +17,15 @@ section {
       position: relative;
 
       .icon-wrapper {
-        height: 420px;
+        height: 300px;
         position: relative;
 
         div {
           border-radius: 0% 0% 50% 0%;
           background-color: white;
-          width: 500px;
-          height: 500px;
-          padding: 5rem;
+          width: 400px;
+          height: 400px;
+          padding: 1rem;
           position: absolute;
           top: 0.1%;
           inset-inline-end: .9%;
@@ -33,7 +33,7 @@ section {
 
 
         .icon-image {
-          width: 100%;
+          width: 70%;
           margin-bottom: 1rem;
 
         }

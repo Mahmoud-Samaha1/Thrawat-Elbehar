@@ -1,0 +1,16 @@
+<app-header />
+<section class="container-fluid py-5">
+  <div class="image-title row justify-content-center align-items-center">
+    <h1 class="col-12 text-center mb-3">{{ "gallery.title" | translate }}</h1>
+    @for (image of imagesData; track $index) {
+    <div
+      class="image col-md-3 row flex-column justify-content-center align-items-center"
+    >
+      <img src="{{ image.ImagePath }}" alt="" class="rounded-5 w-100" />
+
+      <h6>{{ image.Name }}</h6>
+    </div>
+    }
+  </div>
+</section>
+<app-footer />

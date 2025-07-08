@@ -45,6 +45,14 @@ export const routes: Routes = [
     path: "clients",
     loadComponent: () => import("./pages/clients/clients.component").then(m => m.ClientsComponent)
   },
+  {
+    path: "media",
+    loadComponent: () => import("./pages/media/media.component").then(m => m.MediaComponent)
+  },
+  {
+    path: "gallery",
+    loadComponent: () => import("./pages/gallery/gallery.component").then(m => m.GalleryComponent)
+  },
 
   { path: '**', redirectTo: '' },
 ];
