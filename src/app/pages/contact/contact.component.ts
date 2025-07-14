@@ -60,7 +60,7 @@ export class ContactComponent implements OnInit {
   visitorsMessagesSubmit() {
     this._http.post<any>(`${this.url}${this.endPoint}`, this.feedbackForm.value).subscribe(
       (res) => {
-        console.log(res);
+
 
         if (res.success == true) {
           this.feedbackForm.reset()

@@ -41,7 +41,7 @@ export class FooterComponent {
       }
     ).subscribe(
       (res) => {
-        console.log(res);
+
 
         if (res.success == true) {
           this.user.email = ''

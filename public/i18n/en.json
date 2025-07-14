@@ -53,7 +53,8 @@
     "email": "Email",
     "subject": "Subject",
     "message": "Message",
-    "send": "ٍٍٍٍSend",
+    "send": "Send",
+
     "whatts": "whatsapp",
     "location": "Location",
     "validators": {

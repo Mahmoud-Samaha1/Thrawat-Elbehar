@@ -1,4 +1,4 @@
-@if (newsDetailsData.length ) {
+@if (newsDetailsData?.length ) {
 <app-header class="position-relative"></app-header>
 <section class="container-fluid">
   <div class="text-wrapper">
@@ -13,12 +13,12 @@
         class="col-12 mt-lg-0 mt-5 text-center d-flex justify-content-center align-content-end align-items-center"
       >
         <h2 class="w-50 text-center py-2">
-          {{ newsDetailsData[0].Title }}
+          {{ newsDetailsData?.[0]?.Title }}
         </h2>
       </div>
 
       <p class="fs-4 col-12 col-md-8 col-lg-6 text-center mt-3">
-        {{ newsDetailsData[0].Desc }}
+        {{ newsDetailsData?.[0]?.Desc }}
       </p>
     </div>
   </div>
@@ -26,12 +26,12 @@
     class="col-12 row news-images mb-3 justify-content-center align-content-center"
   >
     <img
-      src="{{ newsDetailsData[0].ImagePath1 }}"
+      src="{{ newsDetailsData?.[0]?.ImagePath1 }}"
       alt=""
       class="col-10 col-md-5 col-lg-4 mx-1 rounded-5"
     />
     <img
-      src="{{ newsDetailsData[0].ImagePath2 }}"
+      src="{{ newsDetailsData?.[0]?.ImagePath2 }}"
       alt=""
       class="col-10 col-md-5 col-lg-4 mx-1 rounded-5"
     />

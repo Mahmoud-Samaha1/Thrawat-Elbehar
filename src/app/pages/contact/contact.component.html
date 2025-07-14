@@ -122,14 +122,14 @@
       >
         <div class="social-media col-12 row justify-content-center">
           <a
-            href="'tel:' + {{ contactData()?.[0]?.Phone }}"
+            href="'tel:' + {{ contactData()[0].Phone }}"
             class="icon d-flex justify-content-center align-items-center flex-column"
           >
             <i class="fi fi-sr-phone-call"></i>
             <p>{{ "contact.phone" | translate }}</p>
           </a>
           <a
-            [href]="'https://wa.me/' + contactData()?.[0]?.Whatsapp"
+            [href]="'https://wa.me/' + contactData()[0].Whatsapp"
             class="icon d-flex justify-content-center align-items-center flex-column me-lg-2"
           >
             <i class="fi fi-brands-whatsapp"></i>
@@ -145,7 +145,7 @@
               </p>
             </a> -->
           <a
-            [href]="'mailto:' + contactData()?.[0]?.Email"
+            [href]="'mailto:' + contactData()[0].Email"
             class="icon col-12 d-flex justify-content-center align-items-center flex-column email"
           >
             <i class="fi fi-sr-envelope"></i>

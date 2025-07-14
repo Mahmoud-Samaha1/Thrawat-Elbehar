@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { servicesSectionModel } from '../../../models/servicesSection.model';
-import { Subject, takeUntil } from 'rxjs';
 import { LangService } from '../../../shared/services/lang-service.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-services-section',
@@ -16,13 +16,12 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './services-section.component.scss'
 })
 export class ServicesSectionComponent implements OnInit {
-  private destroy$ = new Subject<void>();
-
   url: string = environment.apiUrl
   endPoint: string = "API/Services/Get"
   servicesSectionData!: servicesSectionModel[]
   _http = inject(HttpClient)
   _langService = inject(LangService)
+  private destroyRef = inject(DestroyRef);
 
   getServicesSectionData() {
     return this._http.get<servicesSectionModel[]>(`${this.url}${this.endPoint}`).subscribe(res => { this.servicesSectionData = res; });
@@ -133,7 +132,7 @@ export class ServicesSectionComponent implements OnInit {
   }
   ngOnInit(): void {
     this._langService.langChanged$
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
         this.getServicesSectionData();
       });

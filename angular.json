@@ -59,6 +59,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "allowedCommonJsDependencies": ["sweetalert2", "leaflet"],
               "outputHashing": "all"
             },
             "development": {

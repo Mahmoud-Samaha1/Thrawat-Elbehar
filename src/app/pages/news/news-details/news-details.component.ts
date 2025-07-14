@@ -1,14 +1,14 @@
-import { Component, inject } from '@angular/core';
+import { Component, DestroyRef, inject } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { newsSectionModel } from '../../../models/newsSection.model';
 import { NewsServiceService } from '../news-service.service';
 import { LangService } from '../../../shared/services/lang-service.service';
-import { Subject, takeUntil } from 'rxjs';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { HeaderComponent } from "../../../shared-ui/components/header/header.component";
 import { FooterComponent } from "../../../shared-ui/components/footer/footer.component";
 import { TranslateModule } from '@ngx-translate/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-news-details',
@@ -22,22 +22,22 @@ export class NewsDetailsComponent {
   endPoint: string = "API/News/Get"
   _newsService = inject(NewsServiceService)
   _http = inject(HttpClient)
-  newsDetailsData!: newsSectionModel[]
+  newsDetailsData!: newsSectionModel[] | undefined
   _langService = inject(LangService)
   _activateRoute = inject(ActivatedRoute)
-  private destroy$ = new Subject<void>();
+  private destroyRef = inject(DestroyRef);
 
   getNewsDetailsData() {
     let id = this._activateRoute.snapshot.params['id']
     return this._http.get<newsSectionModel[]>(`${this.url}${this.endPoint}`, { params: { SearchText: id } })
       .subscribe(res => {
-        this.newsDetailsData = res; console.log(this.newsDetailsData);
+        this.newsDetailsData = res;
       });
   }
   ngOnInit(): void {
 
     this._langService.langChanged$
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
         this.getNewsDetailsData();
       });

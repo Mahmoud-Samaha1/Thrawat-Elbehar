@@ -10,8 +10,6 @@ export class LangService {
   langChanged$ = new BehaviorSubject<string | null>(localStorage.getItem("appLanguage"));
 
   constructor(private _translateService: TranslateService) {
-    this._translateService.setDefaultLang(localStorage.getItem("appLanguage")!);
-    this._translateService.use(localStorage.getItem("appLanguage")!);
   }
 
   switchLanguage(lang: string) {

@@ -5,17 +5,11 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 export const routes: Routes = [
   {
     path: '',
-    component: AuthLayoutComponent,
-    children: [
-      {
-        path: '',
-        loadComponent: () => import('./pages/auth/welcome/welcome.component').then(m => m.WelcomeComponent),
-      },
-      {
-        path: 'home',
-        loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent),
-      }
-    ],
+    loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent),
+  },
+  {
+    path: 'home',
+    loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent),
   },
   {
     path: "about",

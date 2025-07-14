@@ -1,0 +1,1 @@
+import{D as i,lb as n,z as o}from"./chunk-BY4QSNW6.js";var c=class t{constructor(){}_http=i(n);getNews(e,r){return this._http.get(`${e}${r}`)}static \u0275fac=function(r){return new(r||t)};static \u0275prov=o({token:t,factory:t.\u0275fac,providedIn:"root"})};export{c as a};

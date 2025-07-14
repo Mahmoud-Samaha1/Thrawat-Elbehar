@@ -23,7 +23,7 @@ export class HomePageService implements OnInit {
   }
   getWebsiteData() {
     return this._http.get<websiteDataModel[]>(`${this.url}${this.websiteDataEndPoint}`).subscribe(res => {
-      this.websiteData.set(res); console.log(res);
+      this.websiteData.set(res);
     }
     )
   }

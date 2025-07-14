@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { newsSectionModel } from '../../../models/newsSection.model';
-import { Subject, takeUntil } from 'rxjs';
 import { LangService } from '../../../shared/services/lang-service.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-news-section',
@@ -16,19 +16,19 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './news-section.component.scss'
 })
 export class NewsSectionComponent implements OnInit {
-  private destroy$ = new Subject<void>();
   _langService = inject(LangService)
+  private destroyRef = inject(DestroyRef);
 
   url: string = environment.apiUrl
   endPoint: string = "API/News/Get"
   newsSectionData!: newsSectionModel[]
   _http = inject(HttpClient)
   getNewsSectionData() {
-    return this._http.get<newsSectionModel[]>(`${this.url}${this.endPoint}`).subscribe(res => { this.newsSectionData = res; console.log(this.newsSectionData); });
+    return this._http.get<newsSectionModel[]>(`${this.url}${this.endPoint}`).subscribe(res => { this.newsSectionData = res; });
   }
   ngOnInit(): void {
     this._langService.langChanged$
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
         this.getNewsSectionData();
       });

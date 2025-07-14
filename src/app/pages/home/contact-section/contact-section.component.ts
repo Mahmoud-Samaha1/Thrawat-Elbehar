@@ -24,8 +24,6 @@ export class ContactSectionComponent {
   websiteData = computed(() => this._dataService.websiteData())
   _http = inject(HttpClient)
   _langService = inject(LangService)
-  // getWebsiteSectionData() {
-  //   return this._http.get<websiteDataModel[]>(`${this.url}${this.endPoint}`).subscribe(res => { this.websiteData = res; console.log(this.websiteData); });
-  // }
+
 
 }

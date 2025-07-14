@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { environment } from '../../../../environments/environment';
 import { customerSectionModel } from '../../../models/customerSection.model';
 import { HttpClient } from '@angular/common/http';
 import { LangService } from '../../../shared/services/lang-service.service';
-import { Subject, takeUntil } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-customers-section',
@@ -16,19 +16,18 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './customers-section.component.scss'
 })
 export class CustomersSectionComponent implements OnInit {
-  private destroy$ = new Subject<void>();
   url: string = environment.apiUrl
   endPoint: string = "API/Clients/Get"
   customersSectionData!: customerSectionModel[]
   _http = inject(HttpClient)
   _langService = inject(LangService)
+  private destroyRef = inject(DestroyRef);
 
   getServicesSectionData() {
     return this._http.get<customerSectionModel[]>(`${this.url}${this.endPoint}`)
       .subscribe(
         res => {
           this.customersSectionData = res.filter(customer => customer.ShowInHome)
-          console.log(this.customersSectionData);
         });
   }
   customOptions: OwlOptions;
@@ -84,7 +83,7 @@ export class CustomersSectionComponent implements OnInit {
   }
   ngOnInit(): void {
     this._langService.langChanged$
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
         this.getServicesSectionData();
       });

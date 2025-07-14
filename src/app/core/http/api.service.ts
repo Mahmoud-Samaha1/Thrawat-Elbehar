@@ -52,7 +52,7 @@ export class ApiService {
     Object.keys(params).forEach((k, i) => {
       var d = Object.values(params!)[i];
       httpParams.append(k, d)
-      console.log("hello")
+
     });
     return httpParams;
   }

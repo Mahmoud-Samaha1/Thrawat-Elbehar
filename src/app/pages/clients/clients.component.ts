@@ -1,12 +1,12 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { FooterComponent } from "../../shared-ui/components/footer/footer.component";
 import { HeaderComponent } from "../../shared-ui/components/header/header.component";
 import { customerSectionModel } from '../../models/customerSection.model';
 import { HttpClient } from '@angular/common/http';
 import { LangService } from '../../shared/services/lang-service.service';
 import { environment } from '../../../environments/environment';
-import { Subject, takeUntil } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-clients',
@@ -16,13 +16,15 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './clients.component.scss'
 })
 export class ClientsComponent implements OnInit {
-  private destroy$ = new Subject<void>();
+
 
   url: string = environment.apiUrl
   endPoint: string = "API/Clients/Get"
   _http = inject(HttpClient)
   _langService = inject(LangService)
   customersSectionData!: customerSectionModel[]
+  private destroyRef = inject(DestroyRef);
+
   getClientsData() {
     return this._http.get<customerSectionModel[]>(`${this.url}${this.endPoint}`)
       .subscribe(
@@ -32,9 +34,9 @@ export class ClientsComponent implements OnInit {
   }
   ngOnInit(): void {
     this._langService.langChanged$
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
-        this.getClientsData(); // ⬅️ أعد جلب البيانات
+        this.getClientsData();
       });
   }
 }

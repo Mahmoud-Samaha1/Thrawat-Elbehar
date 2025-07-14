@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { AboutHeroSectionComponent } from "./about-hero-section/about-hero-section.component";
 import { HeaderComponent } from "../../shared-ui/components/header/header.component";
 import { VisionComponent } from "./vision/vision.component";
@@ -11,6 +11,7 @@ import { FooterComponent } from "../../shared-ui/components/footer/footer.compon
 import { ContactSectionComponent } from "../home/contact-section/contact-section.component";
 import { LangService } from '../../shared/services/lang-service.service';
 import { Subject, takeUntil } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-about',
@@ -23,16 +24,17 @@ import { Subject, takeUntil } from 'rxjs';
 export class AboutComponent {
   constructor() {
 
-    localStorage.setItem("appLanguage", "ar")
+    // localStorage.setItem("appLanguage", "ar")
   }
-  private destroy$ = new Subject<void>();
+  private destroyRef = inject(DestroyRef);
+
   _aboutService = inject(AboutService)
   _langService = inject(LangService)
   aboutSectionData: aboutSectionModel[] = []
   teamsData: teamsDataModel[] = []
   ngOnInit(): void {
     this._langService.langChanged$
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
         this.getAboutSectionData();
         this.getTeamsData();
@@ -47,7 +49,7 @@ export class AboutComponent {
   getTeamsData() {
     return this._aboutService.getTeamsData().subscribe(res => {
       this.teamsData = res;
-      console.log(this.teamsData);
+
 
     })
   }

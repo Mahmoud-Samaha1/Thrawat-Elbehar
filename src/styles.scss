@@ -65,7 +65,39 @@ html[dir=ltr] {
     }
   }
 
+  app-vision {
+    .wrapper {
 
+      p,
+      h3 {
+
+        text-align: justify !important;
+      }
+    }
+  }
+
+  .word {
+    p {
+      text-align: center !important;
+    }
+
+    &::after {
+      inset-inline-end: -10% !important;
+    }
+  }
+
+  .icon-wrapper {
+    div {
+
+      inset-inline-end: 0px !important;
+      inset-inline-start: 0.9% !important;
+    }
+
+  }
+
+  .calendar {
+    border-radius: 1rem 0rem 0rem 1rem !important;
+  }
 
 
 
